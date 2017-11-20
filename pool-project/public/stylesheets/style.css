@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+.btn {
+  border-radius: 50px;
+  padding: 10px 20px;
+}
+
+.btn a {
+  text-decoration: none;
+}
+.btn a:focus { outline: none; }
+
+.btn-login { background-color: #78b1f8; }
+.btn-login a { color: white; }
+
+.btn-register { background-color: #f6f6f6; }
+.btn-register a { color: black; }
