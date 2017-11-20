@@ -1,1 +1,7 @@
-<h2>List of tournaments</h2>
+<h2>Torneos</h2>
+
+<ul>
+  <% result.forEach((tournament) => { %>
+  <li><%= tournament.name %></li>
+  <li><a href="/tournaments/<%= tournaments._id %>"> Detalles del torneo</a></li>
+  <% })%>
