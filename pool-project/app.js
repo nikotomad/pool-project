@@ -6,6 +6,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const User = require('../models/User');
+const Tournament = require('../models/Tournament');
+const Center = require('../models/Center')
 
 mongoose.connect('mongodb://localhost/pool-project');
 
