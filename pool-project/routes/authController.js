@@ -5,7 +5,8 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 const flash = require("connect-flash");
-
+const multer = require("multer");
+const upload = multer({ dest: './public/uploads/'})
 authController.get("/login", (req, res, next) => {
   res.render("auth/login", { message: req.flash("error") });
 });
@@ -21,7 +22,7 @@ authController.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-authController.post("/signup", (req, res, next) => {
+authController.post("/signup", upload.single('photo'),(req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const level = req.body.level;
