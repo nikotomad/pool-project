@@ -6,10 +6,9 @@ const centerSchema = new Schema({
   address: String,
   tables: Number,
   size: String,
-  score: String,
   latitude: Number,
   longitude: Number,
-
+  phone: String,
   {
   timestamps: {
     createdAt: "created_at",

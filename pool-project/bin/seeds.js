@@ -37,10 +37,13 @@ User.create(users, (err, docs) => {
   const Center = require('../models/Center');
   const centers = [
     {
-      name: 'nikoto',
-      address: 'irondev',
-      tables: 'intermediate'
-      size: 20
+      name: 'Gran Match',
+      address: 'Calle de Brescia, 19, 28028 Madrid',
+      tables: 20,
+      size: 'Big',
+      latitude: 40.436772,
+      longitude: -3.662267,
+      phone: 913 61 32 94,
     },
   ];
 
