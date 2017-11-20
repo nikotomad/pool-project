@@ -9,8 +9,10 @@ const centerSchema = new Schema({
   latitude: Number,
   longitude: Number,
   phone: Number
+  //photos: []
   //timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const Center= mongoose.model("Center", centerSchema);
+
 module.exports = Center;

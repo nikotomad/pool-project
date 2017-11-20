@@ -6,9 +6,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
-const User = require('../models/User');
-const Tournament = require('../models/Tournament');
-const Center = require('../models/Center')
+
+const User = require('./models/User');
+const Tournament = require('./models/Tournament');
+const Center = require('./models/Center')
 
 mongoose.connect('mongodb://localhost/pool-project');
 
@@ -19,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'MADPool';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
