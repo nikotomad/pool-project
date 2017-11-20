@@ -1,11 +1,13 @@
 <h2> <%= center.name %> </h2>
 
-name: String,
-address: String,
-tables: Number,
-size: String,
-latitude: Number,
-longitude: Number,
-phone: Number
-//timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
-});
+<ul>
+  <li>Nombre del centro: <%= center.name %></li><br>
+  <li>Tamaño: <%= center.size %></li><br>
+  <li>Número de mesas: <%= center.tables %></li><br>
+  <li>Dirección: <%= center.address %></li><br>
+  <li>Número de teléfono: <%= center.phone %></li><br>
+</ul>
+
+<!-- <div>fotos</div> -->
+
+<p>Si quiere consultar otra sala, pulse <a href="centers/show">aquí</a></p>
