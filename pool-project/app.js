@@ -6,6 +6,19 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const app = express();
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const dbURL = 'mongodb://localhost/pool-project';
+
+const index = require('./routes/index');
+const authController = require ('./routes/authController');
+const centerController = require ('./routes/centerController')
+const tournamentController = require ('./routes/tournamentController')
+const userController = require ('./routes/userController')
+mongoose.connect(dbURL).then( () => {
+  debug(`Connected to ${dbURL}`);
+});
 
 const User = require('./models/User');
 const Tournament = require('./models/Tournament');
@@ -31,8 +44,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
-const index = require('./routes/index');
+
 app.use('/', index);
+app.use('/', authController);
+app.use('/center', centerController);
+app.use('/tournament', tournamentController);
+app.use('/user', userController);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
