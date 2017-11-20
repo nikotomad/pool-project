@@ -9,7 +9,7 @@ const tournamentSchema = new Schema({
   startDate: Date,
   endingDate: Date,
   winner: String,
-  _creator: {
+  creator: {
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true
