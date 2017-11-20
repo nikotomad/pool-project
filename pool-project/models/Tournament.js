@@ -13,12 +13,8 @@ const tournamentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true
-  },
-}); {
-  timestamps: {
-    createdAt: "created_at",
-    updatedAt: "updated_at"
   }
+  //timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const Tournament = mongoose.model("Tournament", tournamentSchema);

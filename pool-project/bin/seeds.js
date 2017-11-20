@@ -1,20 +1,28 @@
 const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/pool-project', { useMongoClient: true} );
+
+const bcrypt = require("bcrypt");
+const bcryptSalt = 10;
+
 const Center = require('../models/Center');
 const User = require('../models/User');
 const Tournament = require('../models/Tournament');
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
-const salt = bcrypt.genSaltSync(bcryptSalt);
-const encryptedPass = bcrypt.hashSync(password, salt);
-mongoose.connect('mongodb://localhost/pool-project', { useMongoClient: true} );
 
 const users = [
   {
     username: 'nikoto',
     password: 'irondev',
-    nivel: 'intermediate'
+    level: 'intermediate'
   },
+  {
+    username: 'ernes',
+    password: 'bestfresi',
+    level: 'intermediate'
+  }
 ];
+
+const salt = bcrypt.genSaltSync(bcryptSalt);
+const encryptedPass = bcrypt.hashSync(password, salt);
 
 User.collection.drop();
 User.create(users, (err, docs) => {

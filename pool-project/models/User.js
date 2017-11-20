@@ -9,9 +9,8 @@ const userSchema = new Schema({
   tournaments: String,
   favoriteCenter: String,
   orientation: String,
-  gamesWon: Number,
-}, {
-  timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+  gamesWon: Number
+  //timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const User = mongoose.model("User", userSchema);
