@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
 const userSchema = new Schema({
-  username: String,
-  password: String,
-  level: String,
+  username: { type: String, required: [true, 'Please specify a username'] },
+  password: { type: String, required: [true, 'A password is needed'] },
+  level: { type: String, required: [true, 'We need to know your pool level'] },
   avatar: String,
   tournaments: String,
   favoriteCenter: String,
   orientation: String,
-  gamesWon: String,
+  gamesWon: Number,
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
