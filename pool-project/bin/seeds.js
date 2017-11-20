@@ -4,6 +4,8 @@ const User = require('../models/User');
 const Tournament = require('../models/Tournament');
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+const salt = bcrypt.genSaltSync(bcryptSalt);
+const encryptedPass = bcrypt.hashSync(password, salt);
 mongoose.connect('mongodb://localhost/pool-project', { useMongoClient: true} );
 
 const users = [
@@ -12,25 +14,7 @@ const users = [
     password: 'irondev',
     nivel: 'intermediate'
   },
-  {
-    username: 'ernes',
-    password: 'bestfresi',
-    nivel: 'intermediate'
-  },
-  {
-    username: 'alberto',
-    password: 'alberto',
-    nivel: 'beginner'
-  },
-  {
-    username: 'christianvargas',
-    password: 'granmatch',
-    nivel: 'pro'
-  }
 ];
-
-const salt = bcrypt.genSaltSync(bcryptSalt);
-const encryptedPass = bcrypt.hashSync(password, salt);
 
 User.collection.drop();
 User.create(users, (err, docs) => {
