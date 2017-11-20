@@ -1,21 +1,24 @@
+const bodyParser   = require('body-parser');
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
 const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
-const app = express();
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const dbURL = 'mongodb://localhost/pool-project';
 const flash = require("connect-flash");
+
 const index = require('./routes/index');
 const authController = require ('./routes/authController');
-const centerController = require ('./routes/centerController')
-const tournamentController = require ('./routes/tournamentController')
-const userController = require ('./routes/userController')
+const centerController = require ('./routes/centerController');
+const tournamentController = require ('./routes/tournamentController');
+const userController = require ('./routes/userController');
+
+const app = express();
+
 mongoose.connect(dbURL).then( () => {
   debug(`Connected to ${dbURL}`);
 });
@@ -29,9 +32,6 @@ const Center = require('./models/Center')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-// default value for title local
-// app.locals.title = 'MADPool';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

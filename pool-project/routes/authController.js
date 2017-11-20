@@ -1,5 +1,5 @@
 const express = require('express');
-const authController  = express.Router();
+const authController = express.Router();
 const User = require("../models/User");
 const passport = require('passport');
 const bcrypt = require('bcrypt');
@@ -24,7 +24,8 @@ authController.get("/signup", (req, res, next) => {
 authController.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
-  const level = req.body.level; // Could be optional
+  const level = req.body.level;
+
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
@@ -35,16 +36,13 @@ authController.post("/signup", (req, res, next) => {
       res.render("auth/signup", { message: "The username already exists" });
       return;
     }
-
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
-
     const newUser = new User({
       username,
       password: hashPass,
       level
     });
-
     newUser.save((err) => {
       if (err) {
         res.render("auth/signup", { message: "Something went wrong" });
