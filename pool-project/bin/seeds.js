@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
+const Center = require('../models/Center');
+const User = require('../models/User');
+const Tournament = require('../models/Tournament');
+const bcrypt = require("bcrypt");
+const bcryptSalt = 10;
 mongoose.connect('mongodb://localhost/pool-project', { useMongoClient: true} );
 
-const User = require('../models/User');
 const users = [
   {
     username: 'nikoto',
@@ -25,6 +29,9 @@ const users = [
   }
 ];
 
+const salt = bcrypt.genSaltSync(bcryptSalt);
+const encryptedPass = bcrypt.hashSync(password, salt);
+
 User.collection.drop();
 User.create(users, (err, docs) => {
   if (err) {
@@ -34,7 +41,6 @@ User.create(users, (err, docs) => {
     console.log(user.username)
   });
 
-  const Center = require('../models/Center');
   const centers = [
     {
       name: 'Gran Match',
@@ -43,9 +49,10 @@ User.create(users, (err, docs) => {
       size: 'Big',
       latitude: 40.436772,
       longitude: -3.662267,
-      phone: 913 61 32 94,
+      phone: 913613294
     },
   ];
+});
 
 Center.collection.drop();
 Center.create(centers, (err, docs) => {
@@ -55,8 +62,8 @@ Center.create(centers, (err, docs) => {
   docs.forEach((user) => {
     console.log(center.name)
   });
+});
 
-// const Tournament = require('../models/Tournament');
 // const tournaments = [
 //   {
 //     name: 'IronPool First Edition',
@@ -79,4 +86,3 @@ Center.create(centers, (err, docs) => {
 //   });
 
   mongoose.connection.close();
-});

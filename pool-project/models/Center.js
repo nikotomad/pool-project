@@ -8,8 +8,7 @@ const centerSchema = new Schema({
   size: String,
   latitude: Number,
   longitude: Number,
-  phone: String,
-  {
+  phone: Number,
   timestamps: {
     createdAt: "created_at",
     updatedAt: "updated_at"
