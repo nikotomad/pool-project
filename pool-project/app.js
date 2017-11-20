@@ -10,7 +10,7 @@ const app = express();
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const dbURL = 'mongodb://localhost/pool-project';
-
+const flash = require("connect-flash");
 const index = require('./routes/index');
 const authController = require ('./routes/authController');
 const centerController = require ('./routes/centerController')
@@ -24,14 +24,14 @@ const User = require('./models/User');
 const Tournament = require('./models/Tournament');
 const Center = require('./models/Center')
 
-mongoose.connect('mongodb://localhost/pool-project');
+// mongoose.connect('mongodb://localhost/pool-project');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // default value for title local
-app.locals.title = 'MADPool';
+// app.locals.title = 'MADPool';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -42,12 +42,27 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
+app.use(session({
+  cookie: { maxAge: 60000 },
+  secret: 'mad-pool-secret',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(flash());
+require('./passport')(app);
+
+app.use((req,res,next) => {
+  res.locals.title = "MAD Pool";
+  res.locals.user = req.user;
+  next();
+});
 
 app.use('/', index);
 app.use('/', authController);
-app.use('/center', centerController);
-app.use('/tournament', tournamentController);
-app.use('/user', userController);
+// app.use('/center', centerController);
+// app.use('/tournament', tournamentController);
+// app.use('/user', userController);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

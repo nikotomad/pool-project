@@ -2,26 +2,37 @@ const express = require('express');
 const authController  = express.Router();
 const User = require("../models/User");
 const passport = require('passport');
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
+const flash = require("connect-flash");
 
-authController.get('/signup', (req, res, next) => {
-  res.render('auth/signup', {
-    errorMessage: ''
-  });
+authController.get("/login", (req, res, next) => {
+  res.render("auth/login", { message: req.flash("error") });
+});
+
+authController.post("/login", passport.authenticate("local", {
+  successRedirect: "/home",
+  failureRedirect: "/login",
+  failureFlash: true,
+  passReqToCallback: true
+}));
+
+authController.get("/signup", (req, res, next) => {
+  res.render("auth/signup");
 });
 
 authController.post("/signup", (req, res, next) => {
-  const {username, password, level, photo} = req.body;
-
+  const username = req.body.username;
+  const password = req.body.password;
+  const level = req.body.level; // Could be optional
   if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indica nombre de usuario y contraseña" });
+    res.render("auth/signup", { message: "Indicate username and password" });
     return;
   }
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", { message: "Ese nombre de usuario ya existe" });
+      res.render("auth/signup", { message: "The username already exists" });
       return;
     }
 
@@ -31,53 +42,16 @@ authController.post("/signup", (req, res, next) => {
     const newUser = new User({
       username,
       password: hashPass,
-      level,
-      photo,
+      level
     });
 
     newUser.save((err) => {
       if (err) {
-        res.render("auth/signup", { message: "Se ha producido un error" });
+        res.render("auth/signup", { message: "Something went wrong" });
       } else {
         res.redirect("/");
       }
     });
-  });
-});
-
-authController.get('/login', (req, res) => {
-  res.render('auth/login', {
-  errorMessage: ''
-});
-});
-
-authController.post("/login", (req, res, next) => {
-  const {username, password} = req.body;
-
-  if (email === "" || password === "") {
-    res.render("auth/login", {
-      errorMessage: "Indica un mail y una contraseña"
-    });
-    return;
-  }
-
-  User.findOne({ username }, "username", (err, user) => {
-      if (err || !user) {
-        res.render("auth/login", {
-          errorMessage: "La dirección de email no existe"
-        });
-        return;
-      }
-      if (bcrypt.compareSync(password, user.password)) {
-
-        req.session.currentUser = user;
-        res.render('auth/home', {user: user});
-      }
-      else {
-        res.render("auth/login", {
-          errorMessage: "Contraseña incorrecta"
-        });
-      }
   });
 });
 

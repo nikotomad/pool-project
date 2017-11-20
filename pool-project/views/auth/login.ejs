@@ -1,18 +1,15 @@
 <h2>Entra a tu cuenta</h2>
-<form action="/login" method: "POST">
-  <label for="username">Nombre de usuario</label><br>
-  <input type="text" name="username" placeholder="Nombre de usuario">
-  <br><br>
-  <br><br>
+<form action="/login" method="POST">
+  <label for="username">Nombre de usuario</label>
+  <input type="text" name="username" placeholder="Nombre de usuario"><br>
   <label for="password">Contraseña</label>
   <input type="password" name="password" placeholder="Contraseña">
   <br><br>
+  <button>Entrar</button>
   <% if (typeof errorMessage !== "undefined") { %>
     <div class="error-message"><%= errorMessage %></div>
     <br><br>
   <% } %>
-  <button>Entrar</button>
-
   <p> ¿No tienes cuenta todavía? <a href="/signup">Regístrate</a>
   </p>
 </form>
