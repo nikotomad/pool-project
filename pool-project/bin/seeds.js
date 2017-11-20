@@ -8,21 +8,22 @@ const Center = require('../models/Center');
 const User = require('../models/User');
 const Tournament = require('../models/Tournament');
 
+var pass = 'irondev';
+const salt = bcrypt.genSaltSync(bcryptSalt);
+const encryptedPass = bcrypt.hashSync(pass, salt);
+
 const users = [
   {
     username: 'nikoto',
-    password: 'irondev',
+    password: encryptedPass,
     level: 'intermediate'
   },
   {
     username: 'ernes',
-    password: 'bestfresi',
+    password: encryptedPass,
     level: 'intermediate'
   }
 ];
-
-const salt = bcrypt.genSaltSync(bcryptSalt);
-const encryptedPass = bcrypt.hashSync(password, salt);
 
 User.collection.drop();
 User.create(users, (err, docs) => {
@@ -30,51 +31,52 @@ User.create(users, (err, docs) => {
     throw err;
   }
   docs.forEach((user) => {
-    console.log(user.username)
+    console.log('User: ' + user.username);
   });
-
-  const centers = [
-    {
-      name: 'Gran Match',
-      address: 'Calle de Brescia, 19, 28028 Madrid',
-      tables: 20,
-      size: 'Big',
-      latitude: 40.436772,
-      longitude: -3.662267,
-      phone: 913613294
-    },
-  ];
 });
+
+const centers = [
+  {
+    name: 'Gran Match',
+    address: 'Calle de Brescia, 19, 28028 Madrid',
+    tables: 20,
+    size: 'Big',
+    latitude: 40.436772,
+    longitude: -3.662267,
+    phone: 913613294
+  }
+];
 
 Center.collection.drop();
 Center.create(centers, (err, docs) => {
   if (err) {
     throw err;
   }
-  docs.forEach((user) => {
-    console.log(center.name)
+  docs.forEach((center) => {
+    console.log('Center: ' + center.name);
+  });
+ });
+
+const tournaments = [
+  {
+    name: 'IronPool First Edition',
+    level: 'beginner',
+    participants: 16,
+    startDate: new Date('2017-11-22'),
+    endingDate: new Date('2017-11-28'),
+    winner: '',
+    creator: '5a12d574e1882f4b89843aee',
+  },
+];
+
+Tournament.collection.drop();
+Tournament.create(tournaments, (err, docs) => {
+  if (err) {
+    throw err;
+  }
+  docs.forEach((tournament) => {
+    console.log('Tournament: ' + tournament.name);
   });
 });
 
-// const tournaments = [
-//   {
-//     name: 'IronPool First Edition',
-//     level: 'beginner',
-//     participants: 16,
-//     startDate: 22/11/2017,
-//     endingDate: 28/11/2017,
-//     winner: '',
-//     creator: '',
-//   },
-// ];
-//
-// Tournament.collection.drop();
-// Tournament.create(tournaments, (err, docs) => {
-//   if (err) {
-//     throw err;
-//   }
-//   docs.forEach((tournament) => {
-//     console.log(tournament.name)
-//   });
-
-  mongoose.connection.close();
+mongoose.connection.close();
