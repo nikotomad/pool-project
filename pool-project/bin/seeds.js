@@ -61,7 +61,8 @@ const tournaments = [
   {
     name: 'IronPool First Edition',
     level: 'beginner',
-    participants: 16,
+    maxParticipants: 16,
+    participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
     startDate: new Date('2017-11-22'),
     endingDate: new Date('2017-11-28'),
     winner: '',

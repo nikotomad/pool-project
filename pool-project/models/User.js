@@ -10,7 +10,6 @@ const userSchema = new Schema({
   favoriteCenter: String,
   orientation: String,
   gamesWon: Number
-  //timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const User = mongoose.model("User", userSchema);

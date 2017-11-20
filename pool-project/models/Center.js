@@ -8,9 +8,8 @@ const centerSchema = new Schema({
   size: String,
   latitude: Number,
   longitude: Number,
-  phone: Number
-  //photos: []
-  //timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+  phone: Number,
+  photos: [String]
 });
 
 const Center= mongoose.model("Center", centerSchema);

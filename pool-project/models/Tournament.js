@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const tournamentSchema = new Schema({
   name: String,
   level: String,
-  participants: String,
-  tournaments: String,
+  maxParticipants: Number,
+  participants: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   startDate: Date,
   endingDate: Date,
   winner: String,
@@ -14,7 +14,6 @@ const tournamentSchema = new Schema({
     ref: 'User',
     required: true
   }
-  //timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const Tournament = mongoose.model("Tournament", tournamentSchema);
