@@ -49,7 +49,7 @@ authController.post("/signup", upload.single('photo'),(req, res, next) => {
       if (err) {
         res.render("auth/signup", { message: "Something went wrong" });
       } else {
-        res.redirect("/home");
+        res.redirect("/");
       }
     });
   });
