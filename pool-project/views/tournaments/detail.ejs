@@ -1,11 +1,13 @@
-<h2><%= tournament.name %></h2>
+<h2><%= result.name %></h2>
 
-<%= tournament.level %> level<br>
-<%= tournament.maxParticipants %> players<br>
-<%= tournament.participants %> <br>
-<%= tournament.startDate %> <br>
-<%= tournament.endingDate %> <br>
-<%= tournament.winner %> <br>
-Creador: <%= tournament.creator.username %>
+<b><%= result.level %></b><br><br>
+<%= result.maxParticipants %> players<br>
+<b>Participants</b>: <%= result.participants %> <br>
+<br>
+<%= result.startDate %> <br>
+<%= result.endingDate %> <br>
+<hr>
+Creador del Torneo: <%= result.creator.username %> <br><br>
+<button>Apuntarme</button>
 
 <a href="/tournaments">Volver</a>

@@ -44,6 +44,15 @@ const centers = [
     latitude: 40.436772,
     longitude: -3.662267,
     phone: 913613294
+  },
+  {
+    name: 'Tilt Billar Club',
+    address: 'Paseo de Santa María de la Cabeza, 75',
+    tables: 10,
+    size: 'Medium',
+    latitude: 40.398634,
+    longitude: -3.701184,
+    phone: 914744424
   }
 ];
 

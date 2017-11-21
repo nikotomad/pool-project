@@ -59,7 +59,7 @@ app.use((req,res,next) => {
 app.use('/', index);
 app.use('/', authController);
 app.use('/tournaments', tournamentController);
-// app.use('/center', centerController);
+app.use('/centers', centerController);
 app.use('/users', userController);
 
 // catch 404 and forward to error handler
