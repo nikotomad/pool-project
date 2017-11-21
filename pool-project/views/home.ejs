@@ -1,6 +1,6 @@
 <% if(user) { %>
   <h1>Bienvenido <%= user.username %></h1>
-  <a href="/tournaments/show">Ver torneos</a> <br><br>
+  <a href="/tournaments/">Ver torneos</a> - <a href="/users">Ver jugadores</a> - <a href="/centers">Ver centros</a><br><br>
   <a href="/logout">Cerrar sesión</a>
 <% } else { %>
   <a href="/login">Login</a>

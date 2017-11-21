@@ -8,6 +8,7 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const dbURL = 'mongodb://localhost/pool-project';
 const flash = require("connect-flash");
 
 const index = require('./routes/index');
@@ -17,7 +18,6 @@ const tournamentController = require ('./routes/tournamentController');
 const userController = require ('./routes/userController');
 
 const app = express();
-const dbURL = 'mongodb://localhost/pool-project';
 
 mongoose.connect(dbURL).then( () => {
   debug(`Connected to ${dbURL}`);
@@ -60,7 +60,7 @@ app.use('/', index);
 app.use('/', authController);
 app.use('/tournaments', tournamentController);
 // app.use('/center', centerController);
-// app.use('/user', userController);
+// app.use('/users', userController);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
