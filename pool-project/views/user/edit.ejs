@@ -8,10 +8,6 @@
   <input type="text" name="username" value="<%= user.username %>" placeholder="Nombre de usuario">
   <br><br>
 
-  <label for="password">Contraseña</label>
-  <input type="password" name="password" value="<%= user.password %>" placeholder="Contraseña">
-  <br><br>
-
   <label for="level">Nivel: </label>
   <select name="level" value="<%= user.level %>">
     <option value="Principiante">Principiante</option>
@@ -29,13 +25,15 @@
   <input type="number" name="tournaments" value="<%= user.tournaments %>" placeholder="Torneos">
   <br><br>
 
-  <label for="favoriteCenter">Centro Favorito</label>
-  <input type="text" name="favoriteCenter" value="<%= user.favoriteCenter %>" placeholder="Torneos">
-  <br><br>
-
   <label for="gamesWon">Torneos Ganados</label>
   <input type="number" name="gamesWon" value="0" placeholder="Torneos">
   <br><br>
+
+  <label for="favoriteCenter" value="user.favoriteCenter">Centro Favorito</label>
+  <select name="favoriteCenter">
+    <option value="Gran Match">Gran Match</option>
+    <option value="Tilt Billar Club">Tilt Billar Club</option>
+  </select><br><br>
 
   <p>Sube tu foto de perfil</p>
     <input type="text" name="name">
