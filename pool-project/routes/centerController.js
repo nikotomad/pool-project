@@ -3,10 +3,11 @@ const centerController = express.Router();
 const Center = require('../models/Center');
 const Tournament = require('../models/Tournament');
 const flash = require("connect-flash");
+const ensureLogin = require("connect-ensure-login");
 
 // show centers
 
-centerController.get("/", (req, res, next) => {
+centerController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   Center.find({}, (err, center) => {
     if(err){ return next(err) }
     res.render('centers/show', {
@@ -17,7 +18,7 @@ centerController.get("/", (req, res, next) => {
 
 // specific center details
 
-centerController.get('/detail/:id', (req, res, next) => {
+centerController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   let id = req.params.id;
 
   Center.findById(id, (err, center) => {

@@ -6,8 +6,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require("multer");
 const upload = multer({ dest: './public/uploads/'});
+const ensureLogin = require("connect-ensure-login");
 
-userController.get("/", (req, res, next) => {
+userController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   User.find({}, (err, user) => {
     if(err){ return next(err) }
     res.render('user/show', {
@@ -16,7 +17,7 @@ userController.get("/", (req, res, next) => {
   });
 });
 
-userController.get('/detail/:id', (req, res, next) => {
+userController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   const userId = req.params.id;
 
   User.findById(userId, (err, user) => {
@@ -27,7 +28,7 @@ userController.get('/detail/:id', (req, res, next) => {
   });
 });
 
-userController.get('/:id/edit', (req, res, next) => {
+userController.get('/:id/edit', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   const userId = req.params.id;
   Center.find({}, (err, center) => {
     if(err){ return next(err) }
@@ -40,7 +41,7 @@ userController.get('/:id/edit', (req, res, next) => {
   });
 });
 
-userController.post('/:id/edit', upload.single('photo'),(req, res, next) => {
+userController.post('/:id/edit', ensureLogin.ensureLoggedIn('/login'), upload.single('photo'),(req, res, next) => {
   const userId = req.params.id;
   console.log(req.body);
   const updates = {

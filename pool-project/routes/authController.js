@@ -7,6 +7,7 @@ const bcryptSalt = 10;
 const flash = require("connect-flash");
 const multer = require("multer");
 const upload = multer({ dest: './public/uploads/'});
+const ensureLogin = require("connect-ensure-login");
 
 authController.get("/login", (req, res, next) => {
   res.render("auth/login", { message: req.flash("error") });
@@ -62,7 +63,7 @@ authController.post("/signup", upload.single('photo'),(req, res, next) => {
   });
 });
 
-authController.get("/logout", (req, res) => {
+authController.get("/logout", ensureLogin.ensureLoggedIn('/login'), (req, res) => {
   req.logout();
   res.redirect("/");
 });
