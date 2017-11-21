@@ -9,7 +9,7 @@
 <hr>
 Creador del Torneo: <%= result.creator.username %> <br><br>
 
-<form action="/tournaments/addParticipant" method="POST">
+<form action="/tournaments/detail/<%= result._id %>/add" method="POST">
   <input type="submit" value="Apuntarme">
 </form>
 

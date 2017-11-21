@@ -4,7 +4,7 @@ const User = require('../models/User');
 const Tournament = require('../models/Tournament');
 const flash = require("connect-flash");
 
-// show tournaments
+// Show tournaments
 
 tournamentController.get("/", (req, res, next) => {
   Tournament.find({}, (err, tournament) => {
@@ -15,7 +15,7 @@ tournamentController.get("/", (req, res, next) => {
   });
 });
 
-// new tournament
+// New tournament
 
 tournamentController.get("/new", (req, res, next) => {
   res.render("tournaments/new");
@@ -39,12 +39,25 @@ tournamentController.post("/new", (req, res, next) => {
     .catch(err => next(err))
 });
 
-// specific tournament details
+// Specific tournament details
 
 tournamentController.get('/detail/:id', (req, res, next) => {
   Tournament.findById(req.params.id)
    .populate("creator")
    .then(result =>  res.render("tournaments/detail",{ result }))
+});
+
+// User signup for tournament participant
+
+tournamentController.post('/detail/:id/add/', (req, res, next) => {
+  const tournamentId = req.params.id;
+  const updates = {
+    participants: req.user._id,
+  };
+  User.findByIdAndUpdate(tournamentId, updates, (err, user) => {
+    if (err){ return next(err); }
+    return res.redirect('/tournaments/detail/:id');
+  });
 });
 
 module.exports = tournamentController;
