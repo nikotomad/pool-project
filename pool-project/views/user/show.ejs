@@ -1,0 +1,10 @@
+<h2>¡Busca jugadores!</h2>
+
+<ul>
+  <% result.forEach((user) => { %>
+  <li><b><%= user.username %></b></li><br>
+  <li><a href="/users/<%= user._id %>">Perfil</a></li><br>
+</ul>
+  <% })%>
+
+<a href="./home">Volver</a>
