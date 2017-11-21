@@ -68,6 +68,16 @@ const tournaments = [
     winner: '',
     creator: '5a12d574e1882f4b89843aee',
   },
+  {
+    name: 'Warriors of Pool',
+    level: 'intermediate',
+    maxParticipants: 8,
+    participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
+    startDate: new Date('2017-12-06'),
+    endingDate: new Date('2017-12-14'),
+    winner: '',
+    creator: '5a12ecf64845e64daa68303a',
+  }
 ];
 
 Tournament.collection.drop();

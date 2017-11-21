@@ -4,7 +4,9 @@ const User = require('../models/User');
 const Tournament = require('../models/Tournament');
 const flash = require("connect-flash");
 
-tournamentController.get("/show", (req, res, next) => {
+// show tournaments
+
+tournamentController.get("/", (req, res, next) => {
   Tournament.find({}, (err, tournament) => {
     if(err){ return next(err) }
     res.render('tournaments/show', {
@@ -13,13 +15,7 @@ tournamentController.get("/show", (req, res, next) => {
   });
 });
 
-tournamentController.get('/:id', (req, res, next) => {
-  Tournament.findById(req.params.id)
-    .populate('creator')
-    .then(result => res.render('tournaments/detail', {
-      result: result
-    }));
-})
+// new tournament
 
 tournamentController.get("/new", (req, res, next) => {
   res.render("tournaments/new");
@@ -35,9 +31,24 @@ tournamentController.post("/new", (req, res, next) => {
     creator: req.user._id
   });
 
+  console.log(req.user);
+  console.log('User ID: ' + req.user._id);
+
   newTournament.save()
     .then(() => res.redirect("/"))
     .catch(err => next(err))
+});
+
+// specific tournament details
+
+tournamentController.get('/detail/:id', (req, res, next) => {
+  let id = req.params.id;
+
+  Tournament.findById(id, (err, tournament) => {
+    res.render('tournaments/detail', {
+      tournament: tournament
+    })
+  })
 });
 
 module.exports = tournamentController;
