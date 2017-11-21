@@ -24,7 +24,7 @@ authController.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-authController.post("/signup", upload.single('photo'),(req, res, next) => {
+authController.post("/signup", upload.single('avatar'),(req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const level = req.body.level;
