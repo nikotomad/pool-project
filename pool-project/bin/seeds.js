@@ -44,6 +44,15 @@ const centers = [
     latitude: 40.436772,
     longitude: -3.662267,
     phone: 913613294
+  },
+  {
+    name: 'Tilt Billar Club',
+    address: 'Calle de Brescia, 19, 28028 Madrid',
+    tables: 20,
+    size: 'Big',
+    latitude: 40.436772,
+    longitude: -3.662267,
+    phone: 913613294
   }
 ];
 
