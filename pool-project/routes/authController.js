@@ -6,7 +6,8 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 const flash = require("connect-flash");
 const multer = require("multer");
-const upload = multer({ dest: './public/uploads/'})
+const upload = multer({ dest: './public/uploads/'});
+
 authController.get("/login", (req, res, next) => {
   res.render("auth/login", { message: req.flash("error") });
 });
@@ -48,7 +49,7 @@ authController.post("/signup", upload.single('photo'),(req, res, next) => {
       if (err) {
         res.render("auth/signup", { message: "Something went wrong" });
       } else {
-        res.redirect("/");
+        res.redirect("/home");
       }
     });
   });
