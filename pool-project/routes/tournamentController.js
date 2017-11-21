@@ -17,7 +17,7 @@ tournamentController.get('/:id', (req, res, next) => {
   Tournament.findById(req.params.id)
     .populate('creator')
     .then(result => res.render('tournaments/detail', {
-      result
+      result: result
     }));
 })
 
