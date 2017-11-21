@@ -1,6 +1,7 @@
 const express = require('express');
 const userController = express.Router();
 const User = require("../models/User");
+const Center = require("../models/Center");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require("multer");
@@ -28,7 +29,10 @@ userController.get('/detail/:id', (req, res, next) => {
 
 userController.get('/:id/edit', (req, res, next) => {
   const userId = req.params.id;
-
+  Center.find({}, (err, center) => {
+    if(err){ return next(err) }
+    console.log("kdkdkdkdk" + center)
+  });
   User.findById(userId, (err, user) => {
     if (err) { return next(err); }
     res.render('user/edit', {
