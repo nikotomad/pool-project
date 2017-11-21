@@ -42,13 +42,9 @@ tournamentController.post("/new", (req, res, next) => {
 // specific tournament details
 
 tournamentController.get('/detail/:id', (req, res, next) => {
-  let id = req.params.id;
-
-  Tournament.findById(id, (err, tournament) => {
-    res.render('tournaments/detail', {
-      tournament: tournament
-    })
-  })
+  Tournament.findById(req.params.id)
+   .populate("creator")
+   .then(result =>  res.render("tournaments/detail",{ result }))
 });
 
 module.exports = tournamentController;
