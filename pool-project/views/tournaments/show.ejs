@@ -3,11 +3,9 @@
 <p> Consulta los torneos disponibles y apúntate! </p> <br>
 
 <ul>
-  <% result.forEach((tournament) => { %>
-  <li><b><%= tournament.name %></b></li><br>
-  <li><a href="/tournaments/<%= tournaments._id %>"> Detalles del torneo</a></li><br>
-  <li><%= tournament.level %></li>
-</ul>
+  <% tournament.forEach((tournament) => { %>
+  <li><b><%= tournament.name %></b> - <%= tournament.level %> - <%= tournament.maxParticipants %> players - <a href="/tournaments/detail/<%= tournament._id %>"><button>Detalles</button></a></li>
   <% })%>
+</ul>
 
-<a href="./home">Volver</a>
+<a href="/home">Volver</a>

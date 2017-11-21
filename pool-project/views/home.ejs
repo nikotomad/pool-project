@@ -1,2 +1,7 @@
-<h1>Bienvenido <%= username %></h1>
-<a href="/logout">Cerrar sesión</a>
+<% if(user) { %>
+  <h1>Bienvenido <%= user.username %></h1>
+  <a href="/tournaments/show">Ver torneos</a> <br><br>
+  <a href="/logout">Cerrar sesión</a>
+<% } else { %>
+  <a href="/login">Login</a>
+<% } %>
