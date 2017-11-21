@@ -28,3 +28,15 @@ li {
 }
 
 button:focus { outline: none }
+
+.center {
+  background-color: #f6f6f6;
+  width: 80%;
+  margin: 2em auto;
+  padding: 2em;
+}
+
+#map {
+ height: 400px;
+ width: 100%;
+}

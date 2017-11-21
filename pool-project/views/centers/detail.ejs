@@ -7,6 +7,22 @@
   <li>Número de teléfono: <%= center.phone %></li><br>
 </ul>
 
+  <div id="map"></div>
+  <script>
+    function initMap() {
+      var uluru = { lat: <%= center.latitude %>, lng: <%= center.longitude %> };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEkL-jlLHB19M2VVbD52QgO2VkeMERovI&callback=initMap"></script>
+
 <!-- <div>fotos</div> -->
 
 <p>Si quiere consultar otra sala, pulse <a href="/centers">aquí</a></p>

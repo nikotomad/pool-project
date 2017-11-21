@@ -47,12 +47,12 @@ const centers = [
   },
   {
     name: 'Tilt Billar Club',
-    address: 'Calle de Brescia, 19, 28028 Madrid',
-    tables: 20,
-    size: 'Big',
-    latitude: 40.436772,
-    longitude: -3.662267,
-    phone: 913613294
+    address: 'Paseo de Santa María de la Cabeza, 75',
+    tables: 10,
+    size: 'Medium',
+    latitude: 40.398634,
+    longitude: -3.701184,
+    phone: 914744424
   }
 ];
 

@@ -1,15 +1,15 @@
 <h2>Listado de centros disponibles en la Comunidad de Madrid</h2>
 
-<ul>
+<div class="flex">
   <% center.forEach((center) => { %>
-  <li>
+  <div class="center">
     <%= center.name %> <br>
     <%= center.address %> <br>
     <%= center.tables %> tables <br>
     Size: <%= center.size %> <br>
     Latitude: <%= center.latitude %> <br>
     Longitude <%= center.longitude %> <br>
-  </li>
-  <li><a href="/centers/detail/<%= center._id %>"> Ver detalles </a></li>
+    <a href="/centers/detail/<%= center._id %>"> Ver detalles </a>
+  </div>
   <% })%>
-</ul>
+</div>
