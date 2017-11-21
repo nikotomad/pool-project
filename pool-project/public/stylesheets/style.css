@@ -22,3 +22,7 @@ a {
 
 .btn-register { background-color: #f6f6f6; }
 .btn-register a { color: black; }
+
+li {
+  margin-bottom: 10px;
+}

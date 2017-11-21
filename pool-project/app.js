@@ -8,7 +8,6 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const dbURL = 'mongodb://localhost/pool-project';
 const flash = require("connect-flash");
 
 const index = require('./routes/index');
@@ -18,6 +17,7 @@ const tournamentController = require ('./routes/tournamentController');
 const userController = require ('./routes/userController');
 
 const app = express();
+const dbURL = 'mongodb://localhost/pool-project';
 
 mongoose.connect(dbURL).then( () => {
   debug(`Connected to ${dbURL}`);
@@ -26,8 +26,6 @@ mongoose.connect(dbURL).then( () => {
 const User = require('./models/User');
 const Tournament = require('./models/Tournament');
 const Center = require('./models/Center')
-
-// mongoose.connect('mongodb://localhost/pool-project');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
