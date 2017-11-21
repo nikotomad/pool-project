@@ -60,7 +60,7 @@ app.use((req,res,next) => {
 
 app.use('/', index);
 app.use('/', authController);
-app.use('/tournament', tournamentController);
+app.use('/tournaments', tournamentController);
 // app.use('/center', centerController);
 // app.use('/user', userController);
 
