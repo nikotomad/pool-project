@@ -3,6 +3,8 @@ const userController = express.Router();
 const User = require("../models/User");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const multer = require("multer");
+const upload = multer({ dest: './public/uploads/'});
 
 userController.get("/", (req, res, next) => {
   User.find({}, (err, user) => {
@@ -18,7 +20,9 @@ userController.get('/detail/:id', (req, res, next) => {
 
   User.findById(userId, (err, user) => {
     if (err) { return next(err); }
+    console.log(user)
     res.render('user/detail', { user: user });
+
   });
 });
 
@@ -32,9 +36,9 @@ userController.get('/:id/edit', (req, res, next) => {
   });
 });
 
-userController.post('/:id', (req, res, next) => {
+userController.post('/:id/edit', upload.single('photo'),(req, res, next) => {
   const userId = req.params.id;
-
+  console.log(req.body);
   const updates = {
       username: req.body.username,
       level: req.body.level,
@@ -46,7 +50,7 @@ userController.post('/:id', (req, res, next) => {
 
   User.findByIdAndUpdate(userId, updates, (err, user) => {
     if (err){ return next(err); }
-    return res.redirect('/users');
+    return res.redirect('/home');
   });
 });
 

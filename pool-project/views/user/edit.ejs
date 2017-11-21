@@ -12,28 +12,34 @@
   <input type="password" name="password" value="<%= user.password %>" placeholder="Contraseña">
   <br><br>
 
-  <select name="level" size="3" value="<%= user.level %>">
-    <option value="beginner">Principiante</option>
-    <option value="intermediate" selected>Intermedio</option>
-    <option value="advanced">Avanzado</option>
+  <label for="level">Nivel: </label>
+  <select name="level" value="<%= user.level %>">
+    <option value="Principiante">Principiante</option>
+    <option value="Intermedio" selected>Intermedio</option>
+    <option value="Avanzado">Avanzado</option>
   </select>
 
-  <p>Sube tu foto de perfil</p>
-    <input type="text" name="name">
-    <input type="file" name="photo" value="<%= user.photo %>">
-  <br><br>
-
-  <select name="orientation" size="2" value="<%= user.orientation %>">
-    <option value="righthanded">Right handed</option>
-    <option value="lefthanded" selected>Left handed</option>
-  </select>
+  <label for="orientation">Mano dominante</label>
+  <select name="orientation" value="<%= user.orientation %>">
+    <option value="Diestra">Diestra</option>
+    <option value="Zurda" selected>Zurda</option>
+  </select><br><br>
 
   <label for="tournaments">Torneos Disputados</label>
   <input type="number" name="tournaments" value="<%= user.tournaments %>" placeholder="Torneos">
   <br><br>
 
-  <label for="gameswon">Torneos Ganados</label>
-  <input type="number" name="tournaments" value="<%= user.gamesWon %>" placeholder="Torneos">
+  <label for="favoriteCenter">Centro Favorito</label>
+  <input type="text" name="favoriteCenter" value="<%= user.favoriteCenter %>" placeholder="Torneos">
+  <br><br>
+
+  <label for="gamesWon">Torneos Ganados</label>
+  <input type="number" name="gamesWon" value="0" placeholder="Torneos">
+  <br><br>
+
+  <p>Sube tu foto de perfil</p>
+    <input type="text" name="name">
+    <input type="file" name="photo" value="<%= user.photo %>">
   <br><br>
 
 

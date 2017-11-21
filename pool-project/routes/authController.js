@@ -27,15 +27,18 @@ authController.post("/signup", upload.single('photo'),(req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const level = req.body.level;
+  const orientation = req.body.orientation;
+  const tournaments = req.body.tournaments;
+  const gamesWon = req.body.gamesWon;
 
   if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
+    res.render("auth/signup", { message: "Indica nombre de usuario y contraseña" });
     return;
   }
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
+      res.render("auth/signup", { message: "El nombre de usuario ya existe" });
       return;
     }
     const salt = bcrypt.genSaltSync(bcryptSalt);
@@ -43,11 +46,15 @@ authController.post("/signup", upload.single('photo'),(req, res, next) => {
     const newUser = new User({
       username,
       password: hashPass,
-      level
+      level,
+      orientation,
+      tournaments,
+      gamesWon
+
     });
     newUser.save((err) => {
       if (err) {
-        res.render("auth/signup", { message: "Something went wrong" });
+        res.render("auth/signup", { message: "Se ha producido un error" });
       } else {
         res.redirect("/");
       }
