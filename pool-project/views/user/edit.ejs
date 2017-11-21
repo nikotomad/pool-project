@@ -1,3 +1,45 @@
 <h2>Modifica tu Perfil</h2>
 
 <h3><%= user.username %></h3>
+
+<form action="/users/<%= user._id %>/edit" method="POST" enctype="multipart/form-data">
+
+  <label for="username">Nombre de usuario</label>
+  <input type="text" name="username" value="<%= user.username %>" placeholder="Nombre de usuario">
+  <br><br>
+
+  <label for="password">Contraseña</label>
+  <input type="password" name="password" value="<%= user.password %>" placeholder="Contraseña">
+  <br><br>
+
+  <select name="level" size="3" value="<%= user.level %>">
+    <option value="beginner">Principiante</option>
+    <option value="intermediate" selected>Intermedio</option>
+    <option value="advanced">Avanzado</option>
+  </select>
+
+  <p>Sube tu foto de perfil</p>
+    <input type="text" name="name">
+    <input type="file" name="photo" value="<%= user.photo %>">
+  <br><br>
+
+  <select name="orientation" size="2" value="<%= user.orientation %>">
+    <option value="righthanded">Right handed</option>
+    <option value="lefthanded" selected>Left handed</option>
+  </select>
+
+  <label for="tournaments">Torneos Disputados</label>
+  <input type="number" name="tournaments" value="<%= user.tournaments %>" placeholder="Torneos">
+  <br><br>
+
+  <label for="gameswon">Torneos Ganados</label>
+  <input type="number" name="tournaments" value="<%= user.tournaments %>" placeholder="Torneos">
+  <br><br>
+
+
+  <% if (typeof message !== "undefined") { %>
+  <div class="error-message"><%= message %></div>
+  <% } %>
+
+  <button type="submit">Hecho</button>
+</form>
