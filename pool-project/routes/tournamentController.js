@@ -35,7 +35,7 @@ tournamentController.post("/new", (req, res, next) => {
   console.log('User ID: ' + req.user._id);
 
   newTournament.save()
-    .then(() => res.redirect("/"))
+    .then(() => res.redirect("/tournaments"))
     .catch(err => next(err))
 });
 

@@ -75,17 +75,17 @@ const tournaments = [
     startDate: new Date('2017-11-22'),
     endingDate: new Date('2017-11-28'),
     winner: '',
-    creator: '5a12d574e1882f4b89843aee',
+    creator: '5a143a72e671306bf3878f88',
   },
   {
     name: 'Warriors of Pool',
     level: 'intermediate',
     maxParticipants: 8,
-    participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
+    participants:['nikoto','pepe'],
     startDate: new Date('2017-12-06'),
     endingDate: new Date('2017-12-14'),
     winner: '',
-    creator: '5a12ecf64845e64daa68303a',
+    creator: '5a143a72e671306bf3878f88',
   }
 ];
 
