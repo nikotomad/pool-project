@@ -2,12 +2,22 @@
 
 <b><%= result.level %></b><br><br>
 <%= result.maxParticipants %> players<br>
-<b>Participants</b>: <%= result.participants %> <br>
+<b>Participants</b>:
+<% for(let i = 0; i < result.participants.length; i++) { %>
+  <%= result.participants[i].username %>
+<% } %>
 <br>
 <%= result.startDate %> <br>
 <%= result.endingDate %> <br>
 <hr>
 Creador del Torneo: <%= result.creator.username %> <br><br>
+
+<% for(let i = 0; i < result.participants.length; i++) { %>
+  if(result.participants[i].username == user.username){
+
+  } else {
+
+  <% } %>
 
 <form action="/tournaments/detail/<%= result._id %>" method="POST">
   <input type="submit" value="Apuntarme">
