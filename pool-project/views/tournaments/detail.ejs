@@ -3,17 +3,23 @@
 <b><%= result.level %></b><br><br>
 <%= result.maxParticipants %> players<br><br>
 <b>Participants</b>:
-<ul>
-  <% for(let i = 0; i < result.participants.length; i++) { %>
-    <li><%= result.participants[i].username %></li>
-  <% } %>
-</ul>
+<div class="participants" style="color: blue;">
+  <ul>
+    <% for(let i = 0; i < result.participants.length; i++) { %>
+      <li><%= result.participants[i].username %></li>
+    <% } %>
+  </ul>
+</div>
 <%= result.startDate %> <br>
 <%= result.endingDate %> <br>
 <hr>
 Creador del Torneo: <%= result.creator.username %> <br><br>
 
-<% if(result.participants.indexOf(user.username) != -1){ %>
+User: <%= user.username %><br>
+<%= result.participants %>
+Participant <%= user.username %> index: <%= result.participants.indexOf(user.username) %><br>
+
+<% if(isParticipant){ %>
   <p style="color: red">Ya te has dado de alta en este torneo..</p>
 <% } else { %>
   <form action="/tournaments/detail/<%= result._id %>" method="POST">
