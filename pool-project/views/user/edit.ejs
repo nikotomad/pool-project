@@ -26,7 +26,7 @@
   <br><br>
 
   <label for="gamesWon">Torneos Ganados</label>
-  <input type="number" name="gamesWon" value="0" placeholder="Torneos">
+  <input type="number" name="gamesWon" placeholder="Torneos">
   <br><br>
 
   <label for="favoriteCenter" value="user.favoriteCenter">Centro Favorito</label>
@@ -39,7 +39,6 @@
     <input type="text" name="name">
     <input type="file" name="avatar" value="<%= user.avatar %>">
   <br><br>
-
 
   <% if (typeof message !== "undefined") { %>
   <div class="error-message"><%= message %></div>

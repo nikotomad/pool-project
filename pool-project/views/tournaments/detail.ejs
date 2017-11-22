@@ -15,10 +15,6 @@
 <hr>
 Creador del Torneo: <%= result.creator.username %> <br><br>
 
-User: <%= user.username %><br>
-<%= result.participants %>
-Participant <%= user.username %> index: <%= result.participants.indexOf(user.username) %><br>
-
 <% if(isParticipant){ %>
   <p style="color: red">Ya te has dado de alta en este torneo..</p>
 <% } else { %>
