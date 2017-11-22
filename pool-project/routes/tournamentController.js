@@ -16,6 +16,13 @@ tournamentController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, n
   });
 });
 
+tournamentController.post("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
+  console.log(req.body.level);
+  const lvl = req.body.level
+  Tournament.find({level: lvl})
+    .then(tournaments => res.render('tournaments/show', {tournament: tournaments}))
+    .catch(err => console.log("(eeeerrorrr"))
+});
 // New tournament
 
 tournamentController.get("/new", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
