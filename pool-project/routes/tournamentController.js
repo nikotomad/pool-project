@@ -44,21 +44,22 @@ tournamentController.post("/new", ensureLogin.ensureLoggedIn('/login'), (req, re
 
 tournamentController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   Tournament.findById(req.params.id)
+   .populate("participants")
    .populate("creator")
    .then(result =>  res.render("tournaments/detail",{ result }))
 });
 
 // User signup for tournament participant
 
-tournamentController.post('/detail/:id/add/', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
+tournamentController.post('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   const tournamentId = req.params.id;
-  const updates = {
-    participants: req.user._id,
-  };
-  User.findByIdAndUpdate(tournamentId, updates, (err, user) => {
-    if (err){ return next(err); }
-    return res.redirect('/tournaments/detail/:id');
-  });
+  console.log(req.user);
+  Tournament.findByIdAndUpdate(tournamentId,
+    { "$push": { "participants": req.user._id } }, { new:true })
+    //.then(result => res.render("tournaments/detail",{ result }))
+    .then(() => res.redirect("/tournaments"))
+    .catch(err => console.log(err))
 });
+
 
 module.exports = tournamentController;
