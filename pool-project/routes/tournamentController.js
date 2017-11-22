@@ -47,20 +47,22 @@ tournamentController.post("/new", ensureLogin.ensureLoggedIn('/login'), (req, re
     .catch(err => next(err))
 });
 
-// Specific tournament details
-
 tournamentController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
+  let isParticipant = false
   Tournament.findById(req.params.id)
    .populate("participants")
    .populate("creator")
-   .then(result =>  res.render("tournaments/detail",{ result }))
+   .then(result =>  {
+     for(let i = 0; i < result.participants.length; i++) {
+       if(result.participants[i].username === req.user.username)
+         isParticipant = true
+      }
+     res.render("tournaments/detail",{ result, isParticipant })
+   })
 });
-
-// User signup for tournament participant
 
 tournamentController.post('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   const tournamentId = req.params.id;
-  console.log(req.user);
   Tournament.findByIdAndUpdate(tournamentId,
     { "$push": { "participants": req.user._id } }, { new:true })
     .then(() => res.redirect("/tournaments/detail/" + tournamentId))
