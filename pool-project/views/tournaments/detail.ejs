@@ -13,8 +13,23 @@
 <hr>
 Creador del Torneo: <%= result.creator.username %> <br><br>
 
+<%
+var isParticipating = false;
+
+for(let i = 0; i < result.participants.length; i++) {
+  if(result.participants.indexOf(user.username) != -1){
+    isParticipating = true;
+  }
+}
+%>
+
+<% if(isParticipating){ %>
+  <p style="color: red">Ya te has dado de alta en este torneo..</p>
+<% } else { %>
   <form action="/tournaments/detail/<%= result._id %>" method="POST">
     <input type="submit" value="Apuntarme">
   </form>
+<% } %>
+
 <br>
 <a href="/tournaments">Volver</a>

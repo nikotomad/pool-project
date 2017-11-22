@@ -40,8 +40,6 @@ tournamentController.post("/new", ensureLogin.ensureLoggedIn('/login'), (req, re
     .catch(err => next(err))
 });
 
-// Specific tournament details
-
 tournamentController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   Tournament.findById(req.params.id)
    .populate("participants")
@@ -49,11 +47,8 @@ tournamentController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (r
    .then(result =>  res.render("tournaments/detail",{ result }))
 });
 
-// User signup for tournament participant
-
 tournamentController.post('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   const tournamentId = req.params.id;
-  console.log(req.user);
   Tournament.findByIdAndUpdate(tournamentId,
     { "$push": { "participants": req.user._id } }, { new:true })
     .then(() => res.redirect("/tournaments/detail/" + tournamentId))
