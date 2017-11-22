@@ -41,13 +41,13 @@ userController.get('/:id/edit', ensureLogin.ensureLoggedIn('/login'), (req, res,
   });
 });
 
-userController.post('/:id/edit', ensureLogin.ensureLoggedIn('/login'), upload.single('photo'),(req, res, next) => {
+userController.post('/:id/edit', ensureLogin.ensureLoggedIn('/login'), upload.single('avatar'),(req, res, next) => {
   const userId = req.params.id;
   console.log(req.body);
   const updates = {
       username: req.body.username,
       level: req.body.level,
-      photo: req.body.photo,
+      avatar: req.body.avatar,
       orientation: req.body.orientation,
       tournaments: req.body.tournaments,
       gamesWon: req.body.gamesWon
