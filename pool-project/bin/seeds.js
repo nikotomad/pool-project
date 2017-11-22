@@ -81,7 +81,7 @@ const tournaments = [
     name: 'Warriors of Pool',
     level: 'intermediate',
     maxParticipants: 8,
-    participants:['nikoto','pepe'],
+    participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
     startDate: new Date('2017-12-06'),
     endingDate: new Date('2017-12-14'),
     winner: '',
