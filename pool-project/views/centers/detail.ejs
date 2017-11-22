@@ -15,9 +15,16 @@
         zoom: 15,
         center: uluru
       });
+      var iconBase = {
+          url: 'https://image.flaticon.com/icons/png/128/38/38599.png',
+          origin: new google.maps.Point(0, 0),
+          scaledSize: new google.maps.Size(30, 30),
+        };
+
       var marker = new google.maps.Marker({
         position: uluru,
-        map: map
+        map: map,
+        icon: iconBase
       });
     }
   </script>
