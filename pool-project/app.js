@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config()
 const bodyParser   = require('body-parser');
 const express      = require('express');
 const path         = require('path');
@@ -8,15 +9,13 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const dbURL = 'mongodb://localhost/pool-project';
 const flash = require("connect-flash");
-
 const index = require('./routes/index');
 const authController = require ('./routes/authController');
 const centerController = require ('./routes/centerController');
 const tournamentController = require ('./routes/tournamentController');
 const userController = require ('./routes/userController');
-
+const dbURL = process.env.DB_URL;
 const app = express();
 
 mongoose.connect(dbURL).then( () => {
@@ -42,8 +41,8 @@ app.use(layouts);
 
 app.use(session({
   cookie: { maxAge: 60000 },
-  secret: 'mad-pool-secret',
-  resave: true,
+  secret: process.env.SESSION_SECRET,
+  resave: false,
   saveUninitialized: false
 }));
 
