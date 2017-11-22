@@ -63,8 +63,7 @@ tournamentController.post('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (
   console.log(req.user);
   Tournament.findByIdAndUpdate(tournamentId,
     { "$push": { "participants": req.user._id } }, { new:true })
-    //.then(result => res.render("tournaments/detail",{ result }))
-    .then(() => res.redirect("/tournaments"))
+    .then(() => res.redirect("/tournaments/detail/" + tournamentId))
     .catch(err => console.log(err))
 });
 
