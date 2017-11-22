@@ -36,8 +36,7 @@
   </select><br><br>
 
   <p>Sube tu foto de perfil</p>
-    <input type="text" name="name">
-    <input type="file" name="avatar" value="<%= user.avatar %>">
+    <input type="file" name="avatar" value="<%= user.avatar %>" required>
   <br><br>
 
   <% if (typeof message !== "undefined") { %>

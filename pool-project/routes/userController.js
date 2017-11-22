@@ -43,11 +43,11 @@ userController.get('/:id/edit', ensureLogin.ensureLoggedIn('/login'), (req, res,
 
 userController.post('/:id/edit', ensureLogin.ensureLoggedIn('/login'), upload.single('avatar'),(req, res, next) => {
   const userId = req.params.id;
-  console.log(req.body);
+  console.log(req.body.avatar);
   const updates = {
       username: req.body.username,
       level: req.body.level,
-      avatar: req.body.avatar,
+      avatar: req.file.filename,
       orientation: req.body.orientation,
       tournaments: req.body.tournaments,
       gamesWon: req.body.gamesWon

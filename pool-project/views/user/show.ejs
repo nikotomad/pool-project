@@ -2,7 +2,7 @@
 
 <ul>
   <% user.forEach((user) => { %>
-  <li><b><%= user.username %></b> - <a href="/users/detail/<%= user._id %>">Perfil</a></li><br>
+  <li><b><%= user.username %></b> -<a href="/users/detail/<%= user._id %>">Perfil</a></li><br>
   <% })%>
 </ul>
 <a href="/home">Volver</a>
