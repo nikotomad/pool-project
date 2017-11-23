@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv').config();
 const bodyParser   = require('body-parser');
 const express      = require('express');
 const path         = require('path');
@@ -24,7 +24,7 @@ mongoose.connect(dbURL).then( () => {
 
 const User = require('./models/User');
 const Tournament = require('./models/Tournament');
-const Center = require('./models/Center')
+const Center = require('./models/Center');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
