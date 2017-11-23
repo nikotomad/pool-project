@@ -1,5 +1,11 @@
 <h2>¡Busca jugadores!</h2>
 
+<p><b>Búsqueda por nombre: </b></p>
+<form action="/users" method="post">
+  <input type="text" name="username">
+  <button>BUSCAR</button>
+</form>
+
 <ul>
   <% user.forEach((user) => { %>
   <li><b><%= user.username %></b> -<a href="/users/detail/<%= user._id %>">Perfil</a></li><br>

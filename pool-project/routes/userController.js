@@ -17,6 +17,14 @@ userController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) =
   });
 });
 
+userController.post("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
+  console.log(req.body.username);
+  const name = req.body.username
+  User.find({username: name})
+    .then(users => res.render('user/show', {user: users}))
+    .catch(err => console.log("(eeeerrorrr"))
+});
+
 userController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   const userId = req.params.id;
 
