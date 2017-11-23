@@ -6,11 +6,13 @@
       <%= result.maxParticipants %> players<br><br>
       <b>Participants</b>:
       <div class='participants' style='color: blue;'>
-        <ul>
+
           <% for(let i = 0; i < result.participants.length; i++) { %>
-            <li><%= result.participants[i].username %></li>
+            <div class="players">
+              <img src="../../images/user.png" alt=""><b class="part-name"><%= result.participants[i].username %></b>
+            </div>
           <% } %>
-        </ul>
+
       </div>
       <%= result.startDate %> <br>
       <%= result.endingDate %> <br>
@@ -26,7 +28,7 @@
       <% } %>
 
       <br>
-      <a href='/tournaments'>Volver</a>
+      <a href='/tournaments'><button class="btn orange">Volver</button></a>
     </div>
   </div>
 </div>
