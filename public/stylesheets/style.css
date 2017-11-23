@@ -191,7 +191,7 @@ footer p {
   height: 221px;
   margin: 2em auto;
   font-weight: bold;
-  padding: 70px 0px;
+  padding: 96px 0px;
   text-align: center;
   color: white;
   text-transform: uppercase;
@@ -202,7 +202,7 @@ footer p {
 }
 
 .visual-option:hover {
-  padding: 67px 0px;
+  padding: 90px 0px;
 }
 
 .visual-option a {
