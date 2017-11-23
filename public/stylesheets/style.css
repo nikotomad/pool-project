@@ -24,6 +24,8 @@ nav {
 
 a {
   color: #00B7FF;
+  color: orange;
+  text-decoration: none;
 }
 
 p {
@@ -420,9 +422,4 @@ padding: 8px;
 
 #crearbtn{
   margin-left:0px;
-}
-
-.push{
-  color: orange;
-  text-decoration: none;
 }
