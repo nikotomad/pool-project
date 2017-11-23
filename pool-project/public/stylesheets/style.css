@@ -159,6 +159,17 @@ footer {
   margin: 1em auto;
 }
 
+#editProfile {
+  background-color: orange;
+  transition: 0.15s background-color ease-in-out;
+}
+
+#editProfile:hover {
+  background-color: darkorange;
+}
+
+#logout {}
+
 /* Centers page */
 
 .center {
