@@ -1,13 +1,16 @@
-<h2>Entra a tu cuenta</h2>
-<form action='/login' method='POST'>
-  <input type='text' name='username' placeholder='Nombre de usuario'><br>
-  <input type='password' name='password' placeholder='Contraseña'>
-  <br><br>
-  <button>Entrar</button>
-  <% if (typeof errorMessage !== 'undefined') { %>
-    <div class='error-message'><%= errorMessage %></div>
-    <br><br>
-  <% } %>
-  <p> ¿No tienes cuenta todavía? <a href='/signup'>Regístrate</a>
-  </p>
-</form>
+<div class="flex">
+  <div class="centered">
+    <form action='/login' method='POST'>
+      <input id="user" type='text' name='username' placeholder='Nombre de usuario'><br>
+      <input id="pass" type='password' name='password' placeholder='Contraseña'>
+      <br><br>
+      <button class="btn-login">Entrar</button>
+      <% if (typeof errorMessage !== 'undefined') { %>
+        <div class='error-message'><%= errorMessage %></div>
+        <br><br>
+      <% } %>
+      <p> ¿No tienes cuenta todavía? <a href='/signup'>Regístrate</a>
+      </p>
+    </form>
+  </div>
+</div>
