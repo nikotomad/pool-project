@@ -17,7 +17,7 @@ h1, h2 {
 
 nav {
   background-color: #f6f6f6;
-  height: 50px;
+  height: 100px;
   width: 100%;
 }
 
@@ -30,7 +30,7 @@ li {
 }
 
 button {
-  transition: 0.15s background-color ease-in-out;s
+  transition: 0.15s background-color ease-in-out;
 }
 
 button:focus {
@@ -105,7 +105,11 @@ footer {
    margin: auto;  /* Magic! */
 }
 
-.sixty { width: 60%; }
+.sixty {
+  width: 60%;
+  text-align: center;
+}
+
 .orange { background-color: orange }
 
 .btn {
@@ -152,7 +156,7 @@ footer {
 }
 
 .listing {
-  width: 40%;
+  text-align: center;
 }
 
 .listing a {
@@ -161,9 +165,14 @@ footer {
 
 .usercp {
   position: absolute;
-  top: 2em;
-  left: 2em;
-  text-align: center;
+  top: 0;
+  right: 0;
+  text-align: right;
+  display: inline-block;
+}
+
+.usercp p, .usercp a {
+  display: inline;
 }
 
 .visual-option {
@@ -198,12 +207,17 @@ footer {
 #mesa-roja { background-image: url('../images/mesaroja.png') }
 
 #editProfile {
+  width: 100px;
   background-color: orange;
   transition: 0.15s background-color ease-in-out;
 }
 
 #editProfile:hover {
   background-color: darkorange;
+}
+
+#logout {
+  width: 100px;
 }
 
 #logout:hover {
@@ -227,6 +241,10 @@ footer {
   height: 100px;
   border-radius: 50px;
   box-sizing: border-box;
+}
+
+.content {
+  margin-top: 18px;
 }
 
 /* Centers page */
@@ -297,7 +315,7 @@ input[type="number"], input[type="date"] {
 }
 
 .levelselect{
-padding: 8px;  
+padding: 8px;
 }
 
 .volver{

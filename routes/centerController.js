@@ -9,7 +9,7 @@ const ensureLogin = require("connect-ensure-login");
 
 centerController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   Center.find({}, (err, center) => {
-    if(err){ return next(err) }
+    if(err){ return next(err); }
     res.render('centers/show', {
       centers: center
     });
@@ -24,8 +24,8 @@ centerController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, 
   Center.findById(id, (err, center) => {
     res.render('centers/detail', {
       center: center
-    })
-  })
+    });
+  });
 });
 
 module.exports = centerController;
