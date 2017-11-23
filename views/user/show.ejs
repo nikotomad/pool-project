@@ -13,7 +13,7 @@
       <% if(user.avatar !== undefined && user.avatar !== '') { %>
       <img src="/uploads/<%= user.avatar %>" class="user-avatar"><br>
       <% } else { %>
-      <img src="/uploads/missing.jpg" class="user-avatar"><br>
+      <img src="/images/missing.jpg" class="user-avatar"><br>
       <% } %>
       <b><%= user.username %></b><br>
       <span>Nivel: <%= user.level %></span><br>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <% })%>
-    <br> 
+    <br>
     <a href="/home">Volver</a>
   </div>
 </div>
