@@ -12,7 +12,13 @@ body {
   background-size:cover;
   display: flex;
   justify-content: center;
-  align-items: center
+  color: white;
+}
+
+.centered{
+  width:70%;
+  height:100%;
+  background-color:red;
 }
 
 a {
