@@ -314,9 +314,21 @@ li{
   border-top-right-radius: 6px;
 }
 
-.details-btn{
+.details-btn button{
   width: 54%;
-  margin: 0 auto 15px;
+  margin: 0 auto 25px;
+  background-color: orange;
+  transition: 0.15s background-color ease-in-out;
+  display: block;
+}
+
+.details-btn a {
+  text-decoration: none;
+}
+
+.details-btn button:hover{
+  background-color: #ea7308;
+  cursor:pointer;
 }
 
 #form-tourn{
@@ -375,4 +387,9 @@ padding: 8px;
 
 #inputname{
   width: 292px
+}
+
+.push{
+  color: orange;
+  text-decoration: none;
 }

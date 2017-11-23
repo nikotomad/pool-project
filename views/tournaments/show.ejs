@@ -2,7 +2,7 @@
 <div class="centered">
 <h2>Torneos</h2>
 
-<p> Consulta los torneos disponibles y apúntate! También puedes <a href='/tournaments/new'>crear el tuyo</a> propio</p>
+<p> Consulta los torneos disponibles y apúntate! También puedes <a href='/tournaments/new' class="push"><b>crear el tuyo</b></a> propio</p>
 
 <p><b>Busca torneos con nivel: </b></p>
 <form action='/tournaments' method='post' id="form-tourn">
@@ -18,10 +18,10 @@
   <% tournament.forEach((tournament) => { %>
   <div class="elements-list"><b><%= tournament.name %></b> <br> <%= tournament.level %> <br> <%= tournament.maxParticipants %> players -
   </div>
-  <div class="details-btn"><a href='/tournaments/detail/<%= tournament._id %>'><button>Detalles</button></a></div>
+  <div class="details-btn"><a href='/tournaments/detail/<%= tournament._id %>'><button class="orange">Detalles</button></a></div>
   <% })%>
 </div>
 </div>
-<a href='/home' class="volver"><button class="btn orange">Volver</button></a>
+<a href='/home' class="volver"><button class="btn">Volver</button></a>
 </div>
 </div>
