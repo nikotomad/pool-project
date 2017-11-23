@@ -31,7 +31,7 @@ authController.post("/signup", upload.single('avatar'),(req, res, next) => {
   const orientation = req.body.orientation;
   const tournaments = req.body.tournaments;
   const gamesWon = req.body.gamesWon;
-  const avatar = req.file.filename;
+  const avatar = '../public/images/missing.jpg';
 
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indica nombre de usuario y contraseña" });
@@ -53,7 +53,6 @@ authController.post("/signup", upload.single('avatar'),(req, res, next) => {
       tournaments,
       gamesWon,
       avatar
-
     });
     newUser.save((err) => {
       if (err) {
