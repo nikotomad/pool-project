@@ -1,32 +1,32 @@
 <h2>Crea un nuevo torneo</h2>
 
-<form action="/tournaments/new" method="post">
-  <label for="name">Nombre del Torneo</label><br>
-  <input type="text" name="name" placeholder="name">
+<form action='/tournaments/new' method='post'>
+  <label for='name'>Nombre del Torneo</label><br>
+  <input type='text' name='name' placeholder='name'>
   <br><br>
 
-  <label for="level">Nivel de jugadores</label><br>
-  <select name="level">
-    <option value="Principiante">Principiante</option>
-    <option value="Intermedio">Intermedio</option>
-    <option value="Avanzado">Avanzado</option>
+  <label for='level'>Nivel de jugadores</label><br>
+  <select name='level'>
+    <option value='Principiante'>Principiante</option>
+    <option value='Intermedio'>Intermedio</option>
+    <option value='Avanzado'>Avanzado</option>
   </select>
   <br><br>
 
-  <label for="maxParticipants">Número máximo de jugadores</label><br>
-  <input type="number" name="maxParticipants" placeholder="Número" required>
+  <label for='maxParticipants'>Número máximo de jugadores</label><br>
+  <input type='number' name='maxParticipants' placeholder='Número' required>
   <br><br>
 
-  <label for="startdate">Fecha de Inicio</label><br>
-  <input type="date" name="startdate" placeholder="Inicio">
+  <label for='startdate'>Fecha de Inicio</label><br>
+  <input type='date' name='startdate' placeholder='Inicio'>
   <br><br>
 
-  <label for="endingdate">Fecha de Finalización</label><br>
-  <input type="date" name="endingdate" placeholder="Fin">
+  <label for='endingdate'>Fecha de Finalización</label><br>
+  <input type='date' name='endingdate' placeholder='Fin'>
   <br><br>
 
-  <button type="submit">Hecho</button>
+  <button type='submit'>Hecho</button>
   <br><br>
 </form>
 
-<a href="/tournaments">Volver</a>
+<a href='/tournaments'>Volver</a>
