@@ -1,28 +1,9 @@
+/* Generic tags */
 body {
   margin: 0;
   padding:0;
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
-}
-
-.bigdiv {
-  height: 800px;;
-  width: 100%;
-  background-image: url('../img/wooden-background.jpg');
-  background-size:cover;
-  display: flex;
-  justify-content: center;
-  color: white;
-}
-
-.centered{
-  width:70%;
-  height:100%;
-  background-color:red;
-}
-
-a {
-  color: #00B7FF;
 }
 
 nav {
@@ -31,45 +12,19 @@ nav {
   width: 100%;
 }
 
-.btn {
-  border-radius: 50px;
-  padding: 10px 20px;
-
+a {
+  color: #00B7FF;
 }
-
-.btn a {
-  text-decoration: none;
-}
-.btn a:focus { outline: none; }
-
-.btn-login { background-color: #78b1f8; width: 150px;}
-.btn-login a { color: white; }
-
-.btn-register { background-color: #f6f6f6; width: 150px;}
-.btn-register a { color: black; }
 
 li {
   margin-bottom: 10px;
 }
 
-button:focus { outline: none }
-
-
-.center {
-  background-color: #f6f6f6;
-  width: 80%;
-  margin: 2em auto;
-  padding: 2em;
+button:focus {
+  outline: none
 }
 
-#map {
- height: 400px;
- width: 100%;
-}
-
-
-
-.footer{
+footer {
   position: fixed;
   bottom:0;
   height: 50px;
@@ -81,4 +36,62 @@ button:focus { outline: none }
   font-size:9px;
   line-height: 5px;
   padding-top:10px;
+}
+
+/* Repeated */
+
+.wrap {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../img/wooden-background.jpg');
+  background-size:cover;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered{
+   width: auto;  /* Or whatever */
+   height: auto; /* Or whatever */
+   margin: auto;  /* Magic! */
+}
+
+.btn {
+  border: none;
+  border-radius: 50px;
+  font-size: 13px;
+  padding: 15px 50px;
+  margin: 10px;
+  transition: 0.15s all ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.btn a { text-decoration: none; }
+.btn a:focus { outline: none; }
+.btn-login { background-color: #78b1f8;}
+.btn-login a { color: white; }
+.btn-register { background-color: #f6f6f6;}
+.btn-register a { color: black; }
+
+/* Centros */
+
+.center {
+  background-color: #f6f6f6;
+  width: 80%;
+  margin: 2em auto;
+  padding: 2em;
+}
+
+#map {
+ height: 400px;
+ width: 100%;
 }
