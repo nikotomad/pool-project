@@ -14,7 +14,8 @@ let marker;
 let centers = document.getElementsByClassName("center")
 for(i=0; i<centers.length; i++){
   marker = new google.maps.Marker({
-    position: { lat: parseFloat(document.getElementsByClassName('lat')[i].innerHTML), lng: parseFloat(document.getElementsByClassName('lng')[i].innerHTML)},
+    position: { lat: parseFloat(document.getElementsByClassName('lat')[i].innerHTML),
+     lng: parseFloat(document.getElementsByClassName('lng')[i].innerHTML)},
     map: map,
     icon: iconBase
   });
