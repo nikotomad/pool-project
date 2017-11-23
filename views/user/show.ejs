@@ -13,7 +13,11 @@
       <% if(user.avatar !== undefined && user.avatar !== '') { %>
       <img src="/uploads/<%= user.avatar %>" class="user-avatar"><br>
       <% } else { %>
+<<<<<<< HEAD
+      <img src="/uploads/missing.jpg" height ="100px" width="100px" style="border-radius: 50%"><br>
+=======
       <img src="/uploads/missing.jpg" class="user-avatar"><br>
+>>>>>>> 5c6db46ca15693e342a39e2c916606efe2b96678
       <% } %>
       <b><%= user.username %></b><br>
       <span>Nivel: <%= user.level %></span><br>
