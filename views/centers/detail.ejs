@@ -1,13 +1,14 @@
-<h2> <%= center.name %> </h2>
-
-<ul>
-  <li>Tamaño: <%= center.size %></li><br>
-  <li>Número de mesas: <%= center.tables %></li><br>
-  <li>Dirección: <%= center.address %></li><br>
-  <li>Número de teléfono: <%= center.phone %></li><br>
-</ul>
-
+  <div class="filler"></div>
   <div id='map'></div>
+  <h2> <%= center.name %> </h2>
+
+  <div class="column">
+    <div class="one">Tamaño: <%= center.size %></div>
+    <div class="one">Número de mesas: <%= center.tables %></div>
+    <div class="one">Dirección: <%= center.address %></div>
+    <div class="one">Número de teléfono: <%= center.phone %></div>
+  </div>
+
   <script>
     function initMap() {
       var uluru = { lat: <%= center.latitude %>, lng: <%= center.longitude %> };

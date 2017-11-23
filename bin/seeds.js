@@ -16,12 +16,12 @@ const users = [
   {
     username: 'nikoto',
     password: encryptedPass,
-    level: 'intermediate'
+    level: 'Intermedio'
   },
   {
     username: 'ernes',
     password: encryptedPass,
-    level: 'intermediate'
+    level: 'Intermedio'
   }
 ];
 
@@ -59,8 +59,8 @@ const centers = [
     address: 'Calle del Capitán Haya, 49, 28020 Madrid',
     tables: 14,
     size: 'Big',
-    latitude: 40.398634,
-    longitude: -3.701184,
+    latitude: 40.46295,
+    longitude: -3.69187,
     phone: 915714144
   }
 ];
@@ -78,7 +78,7 @@ Center.create(centers, (err, docs) => {
 const tournaments = [
   {
     name: 'IronPool First Edition',
-    level: 'beginner',
+    level: 'Avanzado',
     maxParticipants: 16,
     participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
     startDate: new Date('2017-11-22'),
@@ -88,7 +88,7 @@ const tournaments = [
   },
   {
     name: 'Warriors of Pool',
-    level: 'intermediate',
+    level: 'Principiante',
     maxParticipants: 8,
     participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
     startDate: new Date('2017-12-06'),
