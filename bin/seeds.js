@@ -53,6 +53,15 @@ const centers = [
     latitude: 40.398634,
     longitude: -3.701184,
     phone: 914744424
+  },
+  {
+    name: 'Billarnet Café',
+    address: 'Calle del Capitán Haya, 49, 28020 Madrid',
+    tables: 14,
+    size: 'Big',
+    latitude: 40.398634,
+    longitude: -3.701184,
+    phone: 915714144
   }
 ];
 
