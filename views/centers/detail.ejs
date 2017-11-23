@@ -1,13 +1,32 @@
   <div class="filler"></div>
-  <div id='map'></div>
-  <h2> <%= center.name %> </h2>
 
-  <div class="column">
-    <div class="one">Tamaño: <%= center.size %></div>
-    <div class="one">Número de mesas: <%= center.tables %></div>
-    <div class="one">Dirección: <%= center.address %></div>
-    <div class="one">Número de teléfono: <%= center.phone %></div>
+
+
+<div class="flex" style="min-height: unset">
+  <div class="centered sixty">
+    <div class="detail tournament" style="vertical-align:middle">
+
+<h2 class="crea" style="display:inline-block"> <%= center.name %> </h2>
+      <div class="centers-descrip">
+        <div class="one" style="display:inline-block">Tamaño:
+          <%= center.size %>
+        </div>
+        <div class="one" style="display:inline-block">Número de mesas:
+          <%= center.tables %>
+        </div>
+        <div class="one" style="display:inline-block">
+          <%= center.address %>
+        </div>
+        <div class="one" style="display:inline-block">Número de teléfono:
+          <%= center.phone %>
+        </div>
+      </div>
+<div id='map'></div>
+      <a href='/tournaments'><button class="btn orange" style="width: unset">Volver</button></a>
+      <p class="crea">Si quiere consultar otra sala, pulse <a href='/centers' class="bold">aquí</a></p>
+    </div>
   </div>
+</div>
 
   <script>
     function initMap() {
@@ -32,5 +51,3 @@
   <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEkL-jlLHB19M2VVbD52QgO2VkeMERovI&callback=initMap'></script>
 
 <!-- <div>fotos</div> -->
-
-<p>Si quiere consultar otra sala, pulse <a href='/centers'>aquí</a></p>
