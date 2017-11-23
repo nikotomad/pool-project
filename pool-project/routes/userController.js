@@ -10,7 +10,7 @@ const ensureLogin = require("connect-ensure-login");
 
 userController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   User.find({}, (err, user) => {
-    if(err){ return next(err) }
+    if(err){ return next(err); }
     res.render('user/show', {
       user: user
     });
@@ -19,10 +19,10 @@ userController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) =
 
 userController.post("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   console.log(req.body.username);
-  const name = req.body.username
+  const name = req.body.username;
   User.find({username: name})
     .then(users => res.render('user/show', {user: users}))
-    .catch(err => console.log("(eeeerrorrr"))
+    .catch(err => console.log("(eeeerrorrr"));
 });
 
 userController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
@@ -30,7 +30,7 @@ userController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, re
 
   User.findById(userId, (err, user) => {
     if (err) { return next(err); }
-    console.log(user)
+    console.log(user);
     res.render('user/detail', { user: user });
 
   });
@@ -39,8 +39,8 @@ userController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, re
 userController.get('/:id/edit', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   const userId = req.params.id;
   Center.find({}, (err, center) => {
-    if(err){ return next(err) }
-    console.log("kdkdkdkdk" + center)
+    if(err){ return next(err); }
+    console.log("kdkdkdkdk" + center);
   });
   User.findById(userId, (err, user) => {
     if (err) { return next(err); }

@@ -149,6 +149,10 @@ footer {
   width: 40%;
 }
 
+.listing a {
+  text-decoration: none;
+}
+
 .usercp {
   position: absolute;
   top: 2em;
@@ -159,9 +163,29 @@ footer {
 .visual-option {
   width: 400px;
   height: 221px;
-  background-color: white;
   margin: 2em auto;
+  font-weight: bold;
+  padding: 70px 0px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 26px;
+  box-sizing: border-box;
+  transition: 0.15s padding ease-in-out;
 }
+
+.visual-option:hover {
+  padding: 67px 0px;
+}
+
+.visual-option a {
+  text-decoration: none;
+}
+
+#mesa-verde { background-image: url('../images/mesaverde.png') }
+#mesa-azul { background-image: url('../images/mesaazul.png') }
+#mesa-roja { background-image: url('../images/mesaroja.png') }
 
 #editProfile {
   background-color: orange;
