@@ -61,27 +61,25 @@ input::-webkit-input-placeholder {
 }
 
 footer {
-  position: fixed;
-  bottom:0;
   height: 50px;
-  width:100%;
-  background-color:#0e3809;
+  width: 100%;
+  background-color: #0e3809;
   border-top: 2px solid #442912;
-  color:rgba(255,255,255,0.6);
-  text-align:center;
-  font-size:9px;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  font-size: 9px;
   line-height: 5px;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
 /* Repeated */
 
 .background {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-image: url('../images/wooden-background.jpg');
   background-size: cover;
-  background-position: center;
+  background-repeat: repeat-y;
 }
 
 .flex {
@@ -94,7 +92,7 @@ footer {
   height: 100vh;
 }
 
-.centered{
+.centered {
    width: auto;  /* Or whatever */
    height: auto; /* Or whatever */
    margin: auto;  /* Magic! */
@@ -135,6 +133,30 @@ footer {
   background: url('../images/lock.png') no-repeat scroll 8px 10px;
   background-color: white;
   padding-left: 30px;
+}
+
+/* Home page */
+
+.user h1 {
+  margin-bottom: 1em;
+}
+
+.listing {
+  width: 40%;
+}
+
+.usercp {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  text-align: center;
+}
+
+.visual-option {
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  margin: 1em auto;
 }
 
 /* Centers page */
