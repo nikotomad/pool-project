@@ -517,4 +517,7 @@ padding: 8px;
     background-color: gray;
     border: none;
   }
+  #center-details-button{
+    width: 30px;
+  }
 }
