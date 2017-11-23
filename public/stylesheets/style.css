@@ -335,6 +335,17 @@ li{
   margin-bottom: 20px;
 }
 
+#signupselect{
+  margin-bottom: 20px;
+  width: 338px;
+  padding:10px;
+
+}
+
+.threeforty {
+  width: 340px;
+}
+
 .form-tourn-new{
   width: 270px;
   margin-top:5px;
@@ -351,6 +362,7 @@ input[type="number"], input[type="date"] {
 
 .levelselect{
 padding: 8px;
+
 }
 
 .volver{
@@ -381,12 +393,17 @@ padding: 8px;
   width: 292px
 }
 
-#crea{
+.crea{
   margin-bottom: 10px;
+
 }
 
 #inputname{
   width: 292px
+}
+
+#crearbtn{
+  margin-left:0px;
 }
 
 .push{

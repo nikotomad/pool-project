@@ -1,35 +1,31 @@
 <div class="flex">
-  <div class="centered">
+  <div class="centered threeforty">
     <div class="detail tournament">
+      <form action='/signup' method='POST' enctype='multipart/form-data'>
+        <h2 class="crea">Crea tu cuenta</h2>
 
+        <label for='username'>Nombre de usuario</label><br>
+        <input type='text' name='username' placeholder='Nombre de usuario' class="form-tourn-new">
+        <br><br>
 
-<form action='/signup' method='POST' enctype='multipart/form-data'>
-  <h2>Crea tu cuenta</h2>
+        <label for='password'>Contraseña</label><br>
+        <input type='password' name='password' placeholder='Contraseña' class="form-tourn-new">
+        <br><br>
 
-  <label for='username'>Nombre de usuario</label><br>
-  <input type='text' name='username' placeholder='Nombre de usuario' class="form-tourn-new">
-  <br><br>
+        <p>Nivel Actual: </p>
+        <select id="signupselect" name='level'>
+          <option value='Principiante'>Principiante</option>
+          <option value='Intermedio' selected>Intermedio</option>
+          <option value='Avanzado'>Avanzado</option>
+        </select>
 
-  <label for='password'>Contraseña</label><br>
-  <input type='password' name='password' placeholder='Contraseña' class="form-tourn-new">
-  <br><br>
+        <% if (typeof message !== 'undefined') { %>
+        <div class='error-message'><%= message %></div>
+        <% } %>
 
-  <p>Nivel Actual: </p>
-  <select name='level' class="levelselect">
-    <option value='Principiante'>Principiante</option>
-    <option value='Intermedio' selected>Intermedio</option>
-    <option value='Avanzado'>Avanzado</option>
-  </select>
-
-  <% if (typeof message !== 'undefined') { %>
-  <div class='error-message'><%= message %></div>
-  <% } %>
-
-  <input type='submit' value='Crear'>
-</form>
-
-<p>¿Ya tienes cuenta? Haz clic <a href='/login' class="push"><b>aquí</b></a></p>
-
+        <input id="crearbtn" type='submit' value='Crear' class="btn" style="background-color: orange">
+      </form>
+      <p>¿Ya tienes cuenta? Haz clic <a href='/login' class="push"><b>aquí</b></a></p>
     </div>
   </div>
 </div>
