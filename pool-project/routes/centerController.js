@@ -11,7 +11,7 @@ centerController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next)
   Center.find({}, (err, center) => {
     if(err){ return next(err) }
     res.render('centers/show', {
-      center: center
+      centers: center
     });
   });
 });
