@@ -1,0 +1,29 @@
+<% if(user) { %>
+
+<div class="flex">
+  <div class="centered listing">
+    <a href='/tournaments/'>
+      <div id="mesa-verde" class="visual-option">
+        <p>Ver torneos</p>
+      </div>
+    </a>
+    <a href='/users'>
+      <div id="mesa-azul" class="visual-option">
+        <p>Ver jugadores</p>
+      </div>
+    </a>
+    <a href='/centers'>
+      <div id="mesa-roja" class="visual-option">
+        <p>Ver centros</p>
+      </div>
+    </a>
+  </div>
+
+</div>
+<% } else { %>
+  <div class="flex">
+    <div class="centered">
+        <a href='/login'><button class="btn">Login</button></a>
+    </div>
+  </div>
+<% } %>
