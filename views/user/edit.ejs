@@ -3,7 +3,6 @@
 <h3><%= user.username %></h3>
 
 <form action="/users/<%= user._id %>/edit" method="POST" enctype="multipart/form-data">
-
   <label for="username">Nombre de usuario</label>
   <input type="text" name="username" value="<%= user.username %>" placeholder="Nombre de usuario">
   <br><br>
@@ -33,6 +32,7 @@
   <select name="favoriteCenter">
     <option value="Gran Match">Gran Match</option>
     <option value="Tilt Billar Club">Tilt Billar Club</option>
+    <option value="Billarnet">Billarnet</option>
   </select><br><br>
 
   <p>Sube tu foto de perfil</p>

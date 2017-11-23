@@ -30,9 +30,14 @@ nav {
 
 nav ul li {
   display: inline-block;
-  margin-right: 2em;
+  margin-right: 1em;
+  margin-left: 1em;
   margin-bottom: unset;
   padding: 1em;
+}
+
+nav ul li:hover {
+  opacity: 0.7;
 }
 
 a {
@@ -90,7 +95,7 @@ input::-webkit-input-placeholder {
 footer {
   height: 50px;
   width: 100%;
-  background-color: #0e3809;
+  background-color: #4d897d;
   border-top: 2px solid #442912;
   color: rgba(255,255,255,0.6);
   text-align: center;
@@ -125,6 +130,7 @@ footer p {
 }
 
 .centered {
+  text-align: center;
    width: auto;  /* Or whatever */
    height: auto; /* Or whatever */
    margin: auto;  /* Magic! */
@@ -160,6 +166,13 @@ footer p {
 .btn-register { background-color: #f6f6f6;}
 .btn-register a { color: black; }
 
+.create-torneo {
+  background-color: #4d897d;
+  color: white;
+  width: 130px !important;
+  margin-bottom: 2em;
+}
+
 /* Login page */
 
 #user {
@@ -175,6 +188,13 @@ footer p {
 }
 
 /* Home page */
+
+.logo {
+  width: 100px;
+  margin: 0 auto;
+  padding-top: 1em;
+  display: block;
+}
 
 .user h1 {
   margin-bottom: 1em;
@@ -371,15 +391,10 @@ li{
   cursor:pointer;
 }
 
-#form-tourn{
-  margin-bottom: 20px;
-}
-
 #signupselect{
   margin-bottom: 20px;
   width: 338px;
   padding:10px;
-
 }
 
 .threeforty {
@@ -415,7 +430,6 @@ padding: 8px;
   margin-right:0px;
 }
 .players{
-  vertical-align: center;
   color: white;
   margin-top:10px;
   margin-bottom: 20px;
@@ -461,7 +475,46 @@ padding: 8px;
 /* Media queries de Nikoto no tocar a partir de este punto */
 
 @media only screen and (max-width: 500px) {
-  body {
-
+  nav ul li {
+    width: 25%;
+  }
+  .background {
+    width: unset;
+    min-height: 75vh;
+  }
+  .flex {
+    width: unset;
+    min-height: 75vh;
+  }
+  .centered {
+    text-align: center;
+  }
+  .center {
+    width: 70%;
+    font-size: 11px;
+  }
+  .elements-list {
+    padding: 20px 0;
+    width: 80%;
+  }
+  .details-btn button {
+    width: 80%;
+  }
+  .sixty {
+    width: 80%;
+  }
+  #map {
+    height: 250px;
+  }
+  .part-name{
+    position: unset;
+  }
+  .btn-lookfor {
+    width: 35%;
+  }
+  select {
+    color: white;
+    background-color: gray;
+    border: none;
   }
 }
