@@ -294,6 +294,7 @@ li{
 .details-btn{
   width: 54%;
   margin: 0 auto 15px;
+  background-color: orange;
 }
 
 #form-tourn{
