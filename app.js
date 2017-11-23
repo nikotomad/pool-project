@@ -50,7 +50,7 @@ app.use(flash());
 require('./passport')(app);
 
 app.use((req,res,next) => {
-  res.locals.title = "MAD Pool";
+  res.locals.title = "Pool Mate";
   res.locals.user = req.user;
   next();
 });
