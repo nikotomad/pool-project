@@ -6,13 +6,13 @@
 <div class='flex'>
   <% centers.forEach((center) => { %>
   <div class='center'>
-    <%= center.name %> <br>
-    <%= center.address %> <br>
-    <%= center.tables %> tables <br>
-    Size: <%= center.size %> <br>
-    Latitude: <span class='lat'><%= center.latitude %></span><br>
-    Longitude <span class='lng'><%= center.longitude %></span> <br>
-    <a href='/centers/detail/<%= center._id %>'> Ver detalles </a>
+    <p><b><%= center.name %></b></p>
+    <span><%= center.address %></span><br>
+    <span><%= center.tables %> tables</span><br>
+    <span>Size: <%= center.size %></span><br>
+    <span>Latitude: <span class='lat'><%= center.latitude %></span><br>
+    <span>Longitude <span class='lng'><%= center.longitude %></span> <br>
+    <a href='/centers/detail/<%= center._id %>'><div id="center-details-button"></div></a>
   </div>
   <% })%>
 </div>

@@ -9,18 +9,6 @@
     <script type="text/javascript" src="/js/initMap.js"></script>
   </head>
   <body>
-    <nav>
-      <div class="usercp">
-        <p>Bienvenido, <%= user.username %></p>
-        <a href='/users/<%= user._id %>/edit'><button id="editProfile">Edita tu perfil</button></a>
-        <a href='/logout'><button id="logout">Cerrar sesión</button></a>
-        <% if(user.avatar !== undefined && user.avatar !== '') { %>
-        <img src="/uploads/<%= user.avatar %>" height ="100px" width="100px" style="border-radius: 50%">
-        <% } else { %>
-        <img src="/uploads/missing.jpg" height ="100px" width="100px" style="border-radius: 50%">
-        <% } %>
-      </div>
-    </nav>
     <div class="background">
       <%- body %>
     </div>
