@@ -1,10 +1,10 @@
 <% if(user) { %>
 
 <div class="usercp">
-  <% if(user.avatar !== undefined) { %>
+  <% if(user.avatar !== undefined && user.avatar !== '') { %>
   <img src="/uploads/<%= user.avatar %>" height ="100px" width="100px" style="border-radius: 50%"><br>
   <% } else { %>
-  <img src="https://overcomingms.org/forum/styles/ComBoot-phpBB-3.0/theme/images/default_avatar.jpg" height ="100px" width="100px" style="border-radius: 50%"><br>
+  <img src="/uploads/missing.jpg" height ="100px" width="100px" style="border-radius: 50%"><br>
   <% } %>
   <p>Bienvenido, <%= user.username %></p>
   <a href='/users/<%= user._id %>/edit'><button id="editProfile">Edita tu perfil</button></a><br><br>
@@ -13,9 +13,9 @@
 
 <div class="flex">
   <div class="centered listing">
-    <a href='/tournaments/'><div class="visual-option">Ver torneos</div></a>
-    <a href='/users'><div class="visual-option">Ver jugadores</div></a>
-    <a href='/centers'><div class="visual-option">Ver centros</div></a>
+    <a href='/tournaments/'><div id="mesa-verde" class="visual-option"><p>Ver torneos</p></div></a>
+    <a href='/users'><div id="mesa-azul" class="visual-option"><p>Ver jugadores</p></div></a>
+    <a href='/centers'><div id="mesa-roja" class="visual-option"><p>Ver centros</p></div></a>
   </div>
 
 </div>

@@ -28,10 +28,10 @@ authController.post("/signup", upload.single('avatar'),(req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const level = req.body.level;
-  const orientation = req.body.orientation;
-  const tournaments = req.body.tournaments;
-  const gamesWon = req.body.gamesWon;
-  const avatar = '../public/images/missing.jpg';
+  const orientation = '';
+  const tournaments = '';
+  const gamesWon = '';
+  const avatar = '';
 
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indica nombre de usuario y contraseña" });
