@@ -1,0 +1,27 @@
+<div class="flex">
+<div class="centered">
+<h2>Torneos</h2>
+
+<p> Consulta los torneos disponibles y apúntate! También puedes <a href='/tournaments/new'>crear el tuyo</a> propio</p>
+
+<p><b>Busca torneos con nivel: </b></p>
+<form action='/tournaments' method='post' id="form-tourn">
+  <select name='level' class="levelselect">
+    <option value='Principiante'>Principiante</option>
+    <option value='Intermedio' selected>Intermedio</option>
+    <option value='Avanzado'>Avanzado</option>
+  </select>
+  <button class="btn btn-lookfor">BUSCAR</button>
+</form>
+
+<div class="tourn-list">
+  <% tournament.forEach((tournament) => { %>
+  <div class="elements-list"><b><%= tournament.name %></b> <br> <%= tournament.level %> <br> <%= tournament.maxParticipants %> players -
+  </div>
+  <div class="details-btn"><a href='/tournaments/detail/<%= tournament._id %>'><button>Detalles</button></a></div>
+  <% })%>
+</div>
+</div>
+<a href='/home' class="volver"><button class="btn orange">Volver</button></a>
+</div>
+</div>

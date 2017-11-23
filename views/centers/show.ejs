@@ -1,0 +1,18 @@
+<h2>Listado de centros disponibles en la Comunidad de Madrid</h2>
+<div id='map'></div>
+
+<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEkL-jlLHB19M2VVbD52QgO2VkeMERovI&callback=initMap'></script>
+
+<div class='flex'>
+  <% centers.forEach((center) => { %>
+  <div class='center'>
+    <%= center.name %> <br>
+    <%= center.address %> <br>
+    <%= center.tables %> tables <br>
+    Size: <%= center.size %> <br>
+    Latitude: <span class='lat'><%= center.latitude %></span><br>
+    Longitude <span class='lng'><%= center.longitude %></span> <br>
+    <a href='/centers/detail/<%= center._id %>'> Ver detalles </a>
+  </div>
+  <% })%>
+</div>

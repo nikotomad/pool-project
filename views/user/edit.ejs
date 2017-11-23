@@ -1,0 +1,47 @@
+<h2>Modifica tu Perfil</h2>
+
+<h3><%= user.username %></h3>
+
+<form action="/users/<%= user._id %>/edit" method="POST" enctype="multipart/form-data">
+
+  <label for="username">Nombre de usuario</label>
+  <input type="text" name="username" value="<%= user.username %>" placeholder="Nombre de usuario">
+  <br><br>
+
+  <label for="level">Nivel: </label>
+  <select name="level" value="<%= user.level %>">
+    <option value="Principiante">Principiante</option>
+    <option value="Intermedio" selected>Intermedio</option>
+    <option value="Avanzado">Avanzado</option>
+  </select>
+
+  <label for="orientation">Mano dominante</label>
+  <select name="orientation" value="<%= user.orientation %>">
+    <option value="Diestra">Diestra</option>
+    <option value="Zurda" selected>Zurda</option>
+  </select><br><br>
+
+  <label for="tournaments">Torneos Disputados</label>
+  <input type="number" name="tournaments" value="<%= user.tournaments %>" placeholder="Torneos">
+  <br><br>
+
+  <label for="gamesWon">Torneos Ganados</label>
+  <input type="number" name="gamesWon" placeholder="Torneos">
+  <br><br>
+
+  <label for="favoriteCenter" value="user.favoriteCenter">Centro Favorito</label>
+  <select name="favoriteCenter">
+    <option value="Gran Match">Gran Match</option>
+    <option value="Tilt Billar Club">Tilt Billar Club</option>
+  </select><br><br>
+
+  <p>Sube tu foto de perfil</p>
+    <input type="file" name="avatar" value="<%= user.avatar %>" required>
+  <br><br>
+
+  <% if (typeof message !== "undefined") { %>
+  <div class="error-message"><%= message %></div>
+  <% } %>
+
+  <button type="submit">Hecho</button>
+</form>

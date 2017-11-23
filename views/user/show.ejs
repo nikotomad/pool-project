@@ -1,0 +1,27 @@
+<div class="flex">
+  <div class="centered sixty">
+    <h2>¡Busca jugadores!</h2>
+    <p><b>Búsqueda por nombre: </b></p>
+    <form action="/users" method="post">
+      <input type="text" name="username" placeholder="Nombre de usuario..">
+      <button class="orange">BUSCAR</button>
+    </form>
+
+    <% user.forEach((user) => { %>
+    <div class="user">
+      <div class="content">
+      <% if(user.avatar !== undefined && user.avatar !== '') { %>
+      <img src="/uploads/<%= user.avatar %>" class="user-avatar"><br>
+      <% } else { %>
+      <img src="/uploads/missing.jpg" height ="100px" width="100px" style="border-radius: 50%"><br>
+      <% } %>
+      <b><%= user.username %></b><br>
+      <span>Nivel: <%= user.level %></span><br>
+      <a href="/users/detail/<%= user._id %>">Perfil</a><br>
+      </div>
+    </div>
+    <% })%>
+    <br>
+    <a href="/home">Volver</a>
+  </div>
+</div>
