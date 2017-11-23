@@ -1,10 +1,10 @@
 <% if(user) { %>
 
 <div class="usercp">
-  <% if(user.avatar !== undefined) { %>
+  <% if(user.avatar !== undefined && user.avatar !== '') { %>
   <img src="/uploads/<%= user.avatar %>" height ="100px" width="100px" style="border-radius: 50%"><br>
   <% } else { %>
-  <img src="https://overcomingms.org/forum/styles/ComBoot-phpBB-3.0/theme/images/default_avatar.jpg" height ="100px" width="100px" style="border-radius: 50%"><br>
+  <img src="/uploads/missing.jpg" height ="100px" width="100px" style="border-radius: 50%"><br>
   <% } %>
   <p>Bienvenido, <%= user.username %></p>
   <a href='/users/<%= user._id %>/edit'><button id="editProfile">Edita tu perfil</button></a><br><br>
