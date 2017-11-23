@@ -11,6 +11,7 @@ body {
 h1, h2 {
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
+  padding-top: 2em;
 }
 
 nav {
@@ -84,6 +85,7 @@ footer {
   background-image: url('../images/wooden-background.jpg');
   background-size: cover;
   background-repeat: repeat-y;
+  min-height: 100vh;
 }
 
 .flex {
@@ -212,4 +214,22 @@ footer {
 #map {
  height: 400px;
  width: 100%;
+}
+
+
+/*tournaments page*/
+.btn-lookfor{
+width: 15%;
+padding: 10px;
+transition: 0.15s background-color ease-in-out;
+border: none;
+}
+
+li{
+  list-style-type: none;
+}
+
+.tourn-list{
+  width: 100%;
+  background-color:red;
 }
