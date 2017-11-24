@@ -17,9 +17,16 @@
 
 <div class='tourn-list'>
   <% tournament.forEach((tournament) => { %>
-  <div class='elements-list'><b><%= tournament.name %></b> <br> <%= tournament.level %> <br> <%= tournament.maxParticipants %> jugadores
-  </div>
-  <div class='details-btn'><a href='/tournaments/detail/<%= tournament._id %>'><button class='orange'>Detalles</button></a></div>
+    <div class='elements-list'>
+      <b><%= tournament.name %></b><br>
+      <%= tournament.level %><br>
+      <%= tournament.maxParticipants %> jugadores
+    </div>
+    <div class='details-btn'>
+      <a href='/tournaments/detail/<%= tournament._id %>'>
+        <button class='orange'>Detalles</button>
+      </a>
+    </div>
   <% })%>
 </div>
 </div>

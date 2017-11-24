@@ -1,29 +1,28 @@
-  <div class="filler"></div>
+  <div class='filler'></div>
 
 
 
-<div class="flex" style="min-height: unset">
-  <div class="centered sixty">
-    <div class="detail tournament" style="vertical-align:middle">
-
-<h2 class="crea" style="display:inline-block"> <%= center.name %> </h2>
-      <div class="centers-descrip">
-        <div class="one" style="display:inline-block">Tamaño:
-          <%= center.size %>
+<div class='flex' style='min-height: unset'>
+  <div class='centered sixty'>
+    <div class='detail tournament' style='vertical-align:middle'>
+      <h2 class='crea' style='display:inline-block'><%= center.name %></h2>
+      <div class='centers-descrip'>
+        <div class='one' style='display:inline-block'>
+          <span>Tamaño: <%= center.size %></span>
         </div>
-        <div class="one" style="display:inline-block">Número de mesas:
-          <%= center.tables %>
+        <div class='one' style='display:inline-block'>
+          <span>Número de mesas: <%= center.tables %></span>
         </div>
-        <div class="one" style="display:inline-block">
+        <div class='one' style='display:inline-block'>
           <%= center.address %>
         </div>
-        <div class="one" style="display:inline-block">Número de teléfono:
-          <%= center.phone %>
+        <div class='one' style='display:inline-block'>
+          <span>Número de teléfono: <%= center.phone %></span>
         </div>
       </div>
-<div id='map'></div>
-      <a href='/tournaments'><button class="btn orange" style="width: unset">Volver</button></a>
-      <p class="crea">Si quiere consultar otra sala, pulse <a href='/centers' class="bold">aquí</a></p>
+      <div id='map'></div>
+      <a href='/tournaments'><button class='btn orange' style='width: unset'>Volver</button></a>
+      <p class='crea'>Si quiere consultar otra sala, pulse <a href='/centers' class='bold'>aquí</a></p>
     </div>
   </div>
 </div>
