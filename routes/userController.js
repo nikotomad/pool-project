@@ -45,7 +45,8 @@ userController.get('/:id/edit', ensureLogin.ensureLoggedIn('/login'), (req, res,
   User.findById(userId, (err, user) => {
     if (err) { return next(err); }
     res.render('user/edit', {
-      user: user });
+      user: user
+    });
   });
 });
 
@@ -56,6 +57,7 @@ userController.post('/:id/edit', ensureLogin.ensureLoggedIn('/login'), upload.si
       username: req.body.username,
       level: req.body.level,
       avatar: req.file.filename,
+      favoriteCenter: req.body.favoriteCenter,
       orientation: req.body.orientation,
       tournaments: req.body.tournaments,
       gamesWon: req.body.gamesWon

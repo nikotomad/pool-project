@@ -1,5 +1,6 @@
+const dotenv = require('dotenv').load();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/pool-project', { useMongoClient: true} );
+mongoose.connect(process.env.DB_URL, { useMongoClient: true} );
 
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
@@ -74,17 +75,5 @@ Center.create(centers, (err, docs) => {
     console.log('Center: ' + center.name);
   });
  });
-
-const tournaments = [];
-
-Tournament.collection.drop();
-Tournament.create(tournaments, (err, docs) => {
-  if (err) {
-    throw err;
-  }
-  docs.forEach((tournament) => {
-    console.log('Tournament: ' + tournament.name);
-  });
-});
 
 mongoose.connection.close();
