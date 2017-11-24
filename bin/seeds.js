@@ -75,16 +75,4 @@ Center.create(centers, (err, docs) => {
   });
  });
 
-const tournaments = [];
-
-Tournament.collection.drop();
-Tournament.create(tournaments, (err, docs) => {
-  if (err) {
-    throw err;
-  }
-  docs.forEach((tournament) => {
-    console.log('Tournament: ' + tournament.name);
-  });
-});
-
 mongoose.connection.close();
