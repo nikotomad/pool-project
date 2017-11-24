@@ -6,14 +6,13 @@
       <%= result.maxParticipants %> players<br><br>
       <b>Participants</b>:
       <div class='participants' style='color: blue;'>
-
           <% for(let i = 0; i < result.participants.length; i++) { %>
             <div class="players">
               <img src="../../images/user.png" alt=""><b class="part-name"><%= result.participants[i].username %></b>
             </div>
           <% } %>
-
       </div>
+      <hr>
       <%= result.startDate %> <br>
       <%= result.endingDate %> <br>
       <hr>

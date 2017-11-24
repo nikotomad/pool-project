@@ -47,7 +47,7 @@ const centers = [
   },
   {
     name: 'Tilt Billar Club',
-    address: 'Paseo de Santa María de la Cabeza, 75',
+    address: 'Paseo Santa María de la Cabeza, 75',
     tables: 10,
     size: 'Medium',
     latitude: 40.398634,
@@ -56,7 +56,7 @@ const centers = [
   },
   {
     name: 'Billarnet Café',
-    address: 'Calle del Capitán Haya, 49, 28020 Madrid',
+    address: 'Calle del Capitán Haya, 49',
     tables: 14,
     size: 'Big',
     latitude: 40.46295,
@@ -75,28 +75,7 @@ Center.create(centers, (err, docs) => {
   });
  });
 
-const tournaments = [
-  {
-    name: 'IronPool First Edition',
-    level: 'Avanzado',
-    maxParticipants: 16,
-    participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
-    startDate: new Date('2017-11-22'),
-    endingDate: new Date('2017-11-28'),
-    winner: '',
-    creator: '5a143a72e671306bf3878f88',
-  },
-  {
-    name: 'Warriors of Pool',
-    level: 'Principiante',
-    maxParticipants: 8,
-    participants:['5a12d574e1882f4b89843aee','5a12ecf64845e64daa68303a'],
-    startDate: new Date('2017-12-06'),
-    endingDate: new Date('2017-12-14'),
-    winner: '',
-    creator: '5a143a72e671306bf3878f88',
-  }
-];
+const tournaments = [];
 
 Tournament.collection.drop();
 Tournament.create(tournaments, (err, docs) => {

@@ -438,20 +438,14 @@ padding: 8px;
   position: relative;
 }
 
-.part-name{
-  position:absolute;
-  bottom: 3px;
-}
-
-#hecho{
+#hecho {
   margin-left: 0px;
   margin-bottom: 0px;
   width: 292px
 }
 
-.crea{
+.crea {
   margin-bottom: 15px;
-
 }
 
 #inputname{
@@ -487,6 +481,17 @@ align-items: flex-start;
   justify-content:space-around;
   margin-top:20px;
 }
+
+.arrow-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  margin: auto;
+}
+
 /* Media queries de Nikoto no tocar a partir de este punto */
 
 @media only screen and (max-width: 500px) {
