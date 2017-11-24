@@ -1,18 +1,14 @@
-<div class="flex">
-  <div class="centered">
-    <div id="perfil" class="detail tournament">
-<img src="/uploads/<%= user.avatar %> " alt="" height ="150px" width="150px" style="border-radius: 50%">
-<h2 class="crea"><%= user.username %></h2>
-
-<div class="form-tourn-new bold" style="margin-bottom: 15px">Nivel: <%= user.level %> <br></div>
-<div class="form-tourn-new bold" style="margin-bottom: 15px">Mano dominante: <%= user.orientation %><br></div>
-<div class="form-tourn-new bold" style="margin-bottom: 15px">Centro favorito: <%= user.favoriteCenter %><br></div>
-<div class="form-tourn-new bold" style="margin-bottom: 15px">Torneos jugados: <%= user.tournaments %><br></div>
-<div class="form-tourn-new bold" style="margin-bottom: 15px">Partidas ganadas: <%= user.gamesWon %><br></div>
-
-
-<a href='/users'><button class="btn orange" style="width: unset">Volver</button></a>
-
+<div class='flex'>
+  <div class='centered'>
+    <div id='perfil' class='detail tournament'>
+      <img src='/uploads/<%= user.avatar %> ' alt='' height ='150px' width='150px' style='border-radius: 50%'>
+      <h2 class='crea'><%= user.username %></h2>
+      <div class='form-tourn-new bold' style='margin-bottom: 15px'>Nivel: <%= user.level %> <br></div>
+      <div class='form-tourn-new bold' style='margin-bottom: 15px'>Mano dominante: <%= user.orientation %><br></div>
+      <div class='form-tourn-new bold' style='margin-bottom: 15px'>Centro favorito: <%= user.favoriteCenter %><br></div>
+      <div class='form-tourn-new bold' style='margin-bottom: 15px'>Torneos jugados: <%= user.tournaments %><br></div>
+      <div class='form-tourn-new bold' style='margin-bottom: 15px'>Partidas ganadas: <%= user.gamesWon %><br></div>
+      <a href='/users'><button class='btn orange' style='width: unset'>Volver</button></a>
     </div>
   </div>
 </div>
