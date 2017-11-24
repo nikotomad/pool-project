@@ -31,7 +31,7 @@ userController.get('/detail/:id', ensureLogin.ensureLoggedIn('/login'), (req, re
     .then(user => res.render('user/detail', { user: user }))
     .catch(err => console.log("(Error"));
 
-});
+  });
 
 
 userController.get('/:id/edit', ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
@@ -39,9 +39,12 @@ userController.get('/:id/edit', ensureLogin.ensureLoggedIn('/login'), (req, res,
   Center.find({}, (err, center) => {
     if(err){ return next(err); }
   });
-  User.findById(userId)
-    .then(user => res.render('user/edit', { user: user}))
-    .catch(err => console.log("Error"));
+  User.findById(userId, (err, user) => {
+    if (err) { return next(err); }
+    res.render('user/edit', {
+      user: user
+    });
+  });
 });
 
 userController.post('/:id/edit', ensureLogin.ensureLoggedIn('/login'), upload.single('avatar'),(req, res, next) => {
@@ -56,9 +59,10 @@ userController.post('/:id/edit', ensureLogin.ensureLoggedIn('/login'), upload.si
       gamesWon: req.body.gamesWon
   };
 
-  User.findByIdAndUpdate(userId)
-    .then(user => res.redirect('/home'))
-    .catch(err => console.log("Error"));
+  User.findByIdAndUpdate(userId, updates, (err, user) => {
+    if (err){ return next(err); }
+    return res.redirect('/home');
+  });
 });
 
 
