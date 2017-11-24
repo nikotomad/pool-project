@@ -1,7 +1,7 @@
 <% if(user) { %>
-<div class="usercp">
-  <div class="cp-edit"><a href='/users/<%= user._id %>/edit'><button id="editProfile">Edita tu perfil</button></a></div>
-  <div class="cp-logout"><a href='/logout'><button id="logout">Cerrar sesión</button></a></div>
+<div class="usercp" style="margin-top:20px;">
+  <div class="cp-edit"><a href='/users/<%= user._id %>/edit'><button id="editProfile" style="border-radius: 50px">Edita tu perfil</button></a></div>
+  <div class="cp-logout"><a href='/logout'><button id="logout" style="border-radius: 50px">Cerrar sesión</button></a></div>
 </div>
 <div class="flex">
   <div class="centered listing">

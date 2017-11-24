@@ -1,6 +1,9 @@
+<div class="flex">
+  <div class="centered">
+    <div id="perfil" class="detail tournament seventy" style="margin: auto">
 <h2>Modifica tu Perfil</h2>
 
-<h3><%= user.username %></h3>
+<h3 class="crea form-tourn-new" style="margin-left: 10px"><%= user.username %></h3>
 
 <form action="/users/<%= user._id %>/edit" method="POST" enctype="multipart/form-data">
   <label for="username">Nombre de usuario</label>
@@ -12,7 +15,7 @@
     <option value="Principiante">Principiante</option>
     <option value="Intermedio" selected>Intermedio</option>
     <option value="Avanzado">Avanzado</option>
-  </select>
+  </select><br><br>
 
   <label for="orientation">Mano dominante</label>
   <select name="orientation" value="<%= user.orientation %>">
@@ -21,11 +24,11 @@
   </select><br><br>
 
   <label for="tournaments">Torneos Disputados</label>
-  <input type="number" name="tournaments" value="<%= user.tournaments %>" placeholder="Torneos">
+  <input type="number" class="form-tourn-new" name="tournaments" value="<%= user.tournaments %>" placeholder="Torneos">
   <br><br>
 
   <label for="gamesWon">Torneos Ganados</label>
-  <input type="number" name="gamesWon" placeholder="Torneos">
+  <input type="number" class="form-tourn-new" name="gamesWon" placeholder="Torneos">
   <br><br>
 
   <label for="favoriteCenter" value="user.favoriteCenter">Centro Favorito</label>
@@ -36,12 +39,15 @@
   </select><br><br>
 
   <p>Sube tu foto de perfil</p>
-    <input type="file" name="avatar" value="<%= user.avatar %>" required>
+    <input type="file" name="avatar" class="btn" value="<%= user.avatar %>" required>
   <br><br>
 
   <% if (typeof message !== "undefined") { %>
   <div class="error-message"><%= message %></div>
   <% } %>
 
-  <button type="submit">Hecho</button>
+  <button type="submit" class="btn orange" style="width: unset">Hecho</button>
 </form>
+    </div>
+  </div>
+</div>
