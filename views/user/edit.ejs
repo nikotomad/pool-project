@@ -7,7 +7,7 @@
 
 <form action="/users/<%= user._id %>/edit" method="POST" enctype="multipart/form-data">
   <label for="username">Nombre de usuario</label>
-  <input type="text" name="username" value="<%= user.username %>" placeholder="Nombre de usuario">
+  <input type="text" name="username" value="<%= user.username %>" placeholder="Nombre de usuario" style="width: 94%">
   <br><br>
 
   <label for="level">Nivel: </label>
@@ -38,8 +38,8 @@
     <option value="Billarnet">Billarnet</option>
   </select><br><br>
 
-  <p>Sube tu foto de perfil</p>
-    <input type="file" name="avatar" class="btn" value="<%= user.avatar %>" required>
+  <p style="color: orange" class="bold">Sube tu foto de perfil</p>
+    <input type="file" name="avatar" class="btn" value="<%= user.avatar %>" style="padding-left:0;padding-top:8px; margin:0" required>
   <br><br>
 
   <% if (typeof message !== "undefined") { %>
