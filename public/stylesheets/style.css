@@ -28,6 +28,13 @@ nav {
   width: 100%;
 }
 
+.logo {
+  width: 100px;
+  margin: 0 auto;
+  padding-top: 1em;
+  display: block;
+}
+
 nav ul li {
   display: inline-block;
   margin-right: 1em;
@@ -188,13 +195,6 @@ footer p {
 }
 
 /* Home page */
-
-.logo {
-  width: 100px;
-  margin: 0 auto;
-  padding-top: 1em;
-  display: block;
-}
 
 .user h1 {
   margin-bottom: 1em;
