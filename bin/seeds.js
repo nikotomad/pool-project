@@ -1,5 +1,6 @@
+const dotenv = require('dotenv').load();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/pool-project', { useMongoClient: true} );
+mongoose.connect(process.env.DB_URL, { useMongoClient: true} );
 
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
