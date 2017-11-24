@@ -534,8 +534,10 @@ align-items: flex-start;
   }
   select {
     color: white;
-    background-color: gray;
+    background-color: #4d887d;
     border: none;
+    width: 90%;
+    padding: 7px;
   }
   #center-details-button{
     width: 30px;
