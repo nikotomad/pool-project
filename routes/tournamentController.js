@@ -8,22 +8,17 @@ const ensureLogin = require("connect-ensure-login");
 // Show tournaments
 
 tournamentController.get("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
-  Tournament.find({}, (err, tournament) => {
-    if(err){ return next(err); }
-    res.render('tournaments/show', {
-      tournament: tournament
-    });
-  });
+  Tournament.find()
+    .then(tournament => res.render('tournaments/show', { tournament: tournament }))
+    .catch(err => console.log("(Error getting tournaments list"));
 });
 
 tournamentController.post("/", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
-  console.log(req.body.level);
   const lvl = req.body.level;
   Tournament.find({level: lvl})
     .then(tournaments => res.render('tournaments/show', {tournament: tournaments}))
-    .catch(err => console.log("(eeeerrorrr"));
+    .catch(err => console.log("(Error filtering levels"));
 });
-// New tournament
 
 tournamentController.get("/new", ensureLogin.ensureLoggedIn('/login'), (req, res, next) => {
   res.render("tournaments/new");
@@ -38,9 +33,6 @@ tournamentController.post("/new", ensureLogin.ensureLoggedIn('/login'), (req, re
     endingDate: req.body.endingdate,
     creator: req.user._id
   });
-
-  console.log(req.user);
-  console.log('User ID: ' + req.user._id);
 
   newTournament.save()
     .then(() => res.redirect("/tournaments"))
